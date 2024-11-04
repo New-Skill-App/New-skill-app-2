@@ -6,10 +6,10 @@ import SideBar from "./components/bars/SideBar"
 
 import SkillsList from "./components/functionalities/SkillsList"
 
+import HomePage from "./components/pages/HomePage"
 import AboutPage from "./components/pages/AboutPage"
 import NotFoundPage from "./components/pages/NotFoundPage"
-
-
+import VisualArtsPage from "./components/pages/VisualArtsPage"
 
 
 function App() {
@@ -21,7 +21,8 @@ function App() {
         <Header id="header" />
 
         <Routes>
-          <Route path="/" element={<SkillsList />}/>
+          <Route path="/" element={<HomePage />}/>          
+          <Route path="/VisualArtsPage" element={<VisualArtsPage />}/>
           {/* <Route path="/skills/:skillId" element={<SkillDetailsPage />}/> */}
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/update/:skillId" />

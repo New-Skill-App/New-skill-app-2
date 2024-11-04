@@ -2,12 +2,12 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function SkillsList(){
+function SkillsList(props){
 
     const [skill, setSkill] = useState(null);
 
     useEffect(() => {
-        axios.get("https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills.json")
+        axios.get(props.dataLink)
             .then( (response) => {
                
                 const arr = []
@@ -28,12 +28,13 @@ function SkillsList(){
         <>
             { skill === null 
                 ? <h2>Loading...</h2> 
-                : <h2>Numbers of skills in our API: {skill.length}</h2>  
+                : <h2>{skill.length} skills to explore</h2>  
             }
 
             { skill &&  skill.map( (skillDetails, index) => {
                 return (
                     <div key={index} className="box">
+                        <button >x</button>
                         <h3>{skillDetails.name}</h3>
                         <img src={skillDetails.imageURL} alt="skill image"/>
                         <Link to={`/skills/visual-arts/${skillDetails.id}`}>More Details</Link>
