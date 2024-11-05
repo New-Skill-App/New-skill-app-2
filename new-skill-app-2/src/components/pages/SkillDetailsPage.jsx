@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function SkillDetailsPage({ dataLink }) {
+function SkillDetailsPage({ dataLink, basePath}) {
     const { skillId } = useParams();
     const [skill, setSkill] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -10,7 +10,7 @@ function SkillDetailsPage({ dataLink }) {
 
     useEffect(() => {
         if (dataLink && skillId) {
-            const skillUrl = `${dataLink}/${skillId}.json`;
+            const skillUrl = `${dataLink}/${skillId}`;
 
             axios.get(skillUrl)
                 .then(response => {
@@ -47,7 +47,7 @@ function SkillDetailsPage({ dataLink }) {
                 <p>Resources to improve this skill: {skill.resources.join(", ")}</p>
             )}
             <p>
-                <Link to="/" className="btn btn-primary">Back</Link>
+                <Link to={basePath} className="btn btn-primary">Back</Link>
             </p>
         </div>
     );

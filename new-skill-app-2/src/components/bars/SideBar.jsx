@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -14,6 +14,8 @@ function SideBar() {
         <NavLink to="/about-page">
           <a className="text-sm-center nav-link">About Page</a>
         </NavLink>
+
+        <Link to="/skills/create"><a>Add Skill</a></Link>
       </aside>
 
     </div>
