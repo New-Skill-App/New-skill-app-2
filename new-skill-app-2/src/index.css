@@ -59,4 +59,10 @@ button:focus-visible {
   height: 30px;
 }
 
+.box {
+  display: flex;
+  border-radius: 10px;
+  border: black;
+}
+
 

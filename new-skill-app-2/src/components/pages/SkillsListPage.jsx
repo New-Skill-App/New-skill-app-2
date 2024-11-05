@@ -2,6 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
+
 function SkillsList(props) {
 
     const [skills, setSkills] = useState(null);
@@ -31,6 +32,17 @@ function SkillsList(props) {
         )
     }
 
+
+    const deleteSkill = (skillId) => {
+        axios.delete(`${props.dataLink}/${skillId}.json`)
+            .then((response) => {
+                setSkills((prevSkills) => prevSkills.filter((skill) => skill.id !== skillId));
+            })
+            .catch(e => {
+                console.log("Error deleting skill...", e);
+            });
+    };
+
     return (
         <>
             {skills === null
@@ -40,14 +52,14 @@ function SkillsList(props) {
 
             {skills && skills.map((skillDetails) => {
                 return (
-                    <NavLink key={skillDetails.id} to={`skills/${skillDetails.id}`}>
-                        <div className="box">
-                            <button>x</button>
-                            <h3>{skillDetails.name}</h3>
-                            <img src={skillDetails.imageURL} alt="skill image" />
+                        <div key={skillDetails.id} className="box">
+                            <button onClick={() => deleteSkill(skillDetails.id)}>x</button>
+                            <NavLink to={`skills/${skillDetails.id}`}>
+                                <h3>{skillDetails.name}</h3>
+                                <img src={skillDetails.imageURL} alt="skill image" />
+                            </NavLink>
                         </div>
-                    </NavLink>
-                );
+                    );
             })}
         </>
     );
