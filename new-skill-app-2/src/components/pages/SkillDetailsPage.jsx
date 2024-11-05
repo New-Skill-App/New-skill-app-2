@@ -10,7 +10,7 @@ function SkillDetailsPage({ dataLink, basePath}) {
 
     useEffect(() => {
         if (dataLink && skillId) {
-            const skillUrl = `${dataLink}/${skillId}`;
+            const skillUrl = `${dataLink}/${skillId}.json`;
 
             axios.get(skillUrl)
                 .then(response => {

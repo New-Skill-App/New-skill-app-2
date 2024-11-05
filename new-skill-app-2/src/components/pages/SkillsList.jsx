@@ -9,7 +9,7 @@ function SkillsList({dataLink}) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`${dataLink}`)
+        axios.get(`${dataLink}.json`)
             .then((response) => {
 
                 const arr = []
@@ -24,7 +24,7 @@ function SkillsList({dataLink}) {
                 setError("Error getting skills from the API... Please, try again later.")
                 console.log(e);
             });
-    }, [dataLink]);
+    }, [{dataLink}]);
 
     if(error){
         return (
@@ -34,7 +34,7 @@ function SkillsList({dataLink}) {
 
 
     const deleteSkill = (skillId) => {
-        axios.delete(`${props.dataLink}/${skillId}.json`)
+        axios.delete(`${dataLink}/${skillId}.json`)
             .then((response) => {
                 setSkills((prevSkills) => prevSkills.filter((skill) => skill.id !== skillId));
             })

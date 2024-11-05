@@ -11,7 +11,7 @@ import CreateSkill from "./components/functionalities/CreateSkill";
 import SkillsList from "./components/pages/SkillsList";
 
 function App() {
-  const dataLinkVisualArts = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills.json";
+  const dataLinkVisualArts = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
   
   return (
     <>
