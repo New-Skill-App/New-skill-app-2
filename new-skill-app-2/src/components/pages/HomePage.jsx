@@ -32,7 +32,13 @@ function HomePage() {
             <h2 className="m-5">Categories</h2>
 
 
-            <div className=" d-flex flex-row justify-content-center align-items-center">
+            <div className=" d-flex flex-row justify-content-center align-items-center"
+            style={{
+                        width: "100%",
+                        height: "auto"
+                    }}>
+
+                        
                 <NavLink to="/visual-arts-page">
 
                     <div

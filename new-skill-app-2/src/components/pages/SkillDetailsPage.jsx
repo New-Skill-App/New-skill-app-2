@@ -1,8 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function SkillDetailsPage({ dataLink, basePath}) {
+function SkillDetailsPage({ dataLink, basePath }) {
     const { skillId } = useParams();
     const [skill, setSkill] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -19,7 +19,7 @@ function SkillDetailsPage({ dataLink, basePath}) {
                 })
                 .catch(e => {
                     setError("Error fetching skill details. Please try again.");
-                    setLoading(false); 
+                    setLoading(false);
                     console.log(e);
                 });
         }
@@ -38,18 +38,62 @@ function SkillDetailsPage({ dataLink, basePath}) {
     }
 
     return (
-        <div className='SkillDetails card'>
-            {skill.imageURL && <img src={skill.imageURL} alt={skill.name} />}
-            <h2>{skill.name}</h2>
-            <h3>Target Audience: {skill.targetAudience}</h3>
-            <p>Description: {skill.description}</p>
-            {skill.resources && (
-                <p>Resources to improve this skill: {skill.resources.join(", ")}</p>
-            )}
-            <p>
-                <Link to={basePath} className="btn btn-primary">Back</Link>
-            </p>
-        </div>
+        <>
+            <div className="d-flex flex-column align-items-center 100vh "
+                style={{
+                    width: "90vw",
+                    marginLeft: "10vw",
+                    background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
+                }}>
+
+
+                <div className="d-flex flex-row flex-wrap justify-content-center align-items-center"
+                    style={{
+                        width: "70vw",
+                        height: "auto",
+                        backgroundColor: "#E2EBF5"
+                    }}>
+
+                    <div className="d-flex flex-column align-items-center"
+                        style={{
+                            width: "40%",
+                            height: "100%"
+                        }}>
+                        <h2>{skill.name}</h2>
+                        {skill.imageURL && <img src={skill.imageURL} alt={skill.name} />}
+                    </div>
+
+                    <div className="d-flex flex-column justify-content-left"
+                        style={{
+                            width: "40%",
+                            height: "100%"
+                        }}>
+                        <h5>Target Audience: </h5> <p>{skill.targetAudience}</p>
+
+                        <h5>Description:</h5> <p>{skill.description}</p>
+
+                        {skill.resources && (
+                            <>
+                                <h5>Resources to improve this skill:</h5>
+                                <p>{skill.resources.join(", ")}</p>
+                            </>
+                        )}
+                        <div className="d-flex justify-content-end">
+                            <NavLink>
+                                <button className="btn btn-primary m-2">Edit</button>
+                            </NavLink>
+                        </div>
+
+                    </div>
+                </div>
+                <div>
+                    <NavLink to={basePath}>
+                        <button className="btn btn-secondary m-3">Back</button>
+                    </NavLink>
+                </div>
+            </div>
+
+        </>
     );
 }
 

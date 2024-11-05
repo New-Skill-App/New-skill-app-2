@@ -57,7 +57,7 @@ function SkillsList({ dataLink }) {
                         style={{ fontWeight: "bold" }}> {skills.length} Skills To Explore</h2>}
 
 
-                <div className=" d-flex flex-row flex-wrap justify-content-center align-items-center">
+                <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
 
                     {skills && skills.map((skillDetails) => {
                         return (
