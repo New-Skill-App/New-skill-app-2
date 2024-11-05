@@ -7,7 +7,7 @@ import HomePage from "./components/pages/HomePage"
 import AboutPage from "./components/pages/AboutPage"
 import NotFoundPage from "./components/pages/NotFoundPage"
 import SkillDetailsPage from "./components/pages/SkillDetailsPage"
-import SkillsList from "./components/functionalities/SkillsList"
+import SkillsListPage from "./components/pages/SkillsListPage"
 
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/visual-arts-page" element={<SkillsList dataLink={"https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills"} />} />
+          <Route path="/visual-arts-page" element={<SkillsListPage dataLink={"https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills"} />} />
           <Route path="/visual-arts-page/skills/:skillId" element={<SkillDetailsPage dataLink={"https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills"} />} />
           {/* <Route path="/sports-page" element={<SkillsList dataLink={""} />} /> */}
           <Route path="/about-page" element={<AboutPage />} />
