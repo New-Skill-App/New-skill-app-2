@@ -22,7 +22,7 @@ function CreateSkill({dataLink}) {
             resources: resources,
         }
 
-        axios.post(`${dataLink}/`,newSkill)
+        axios.post(`${dataLink}.json`,newSkill)
             .then( response => {
                 console.log(response)
             })
