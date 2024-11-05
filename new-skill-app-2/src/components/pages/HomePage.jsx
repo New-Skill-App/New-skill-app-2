@@ -17,12 +17,28 @@ function HomePage() {
 
 
             <h2>Categories</h2>
-            <NavLink to="/visual-arts-page">
-                <div className="card">Category 1 (Visual Arts)</div>
-            </NavLink>
-            
-            <div className="card">Category 2</div>
-            <div className="card">Category 3</div>
+
+            <div className="d-flex flex-row justify-content-center align-items-center vw-100">
+
+                <NavLink to="/visual-arts-page">
+
+                    <div className="card justify-content-center align-items-center mx-3" style={{ width: "400px", height: "300px" }}>
+
+                        <h3>Category 1 (Visual Arts)</h3>
+
+                    </div>
+                </NavLink>
+
+                <div className="card justify-content-center align-items-center mx-3" style={{ width: "400px", height: "300px" }}>
+                    <h3>Category 2</h3>
+
+                </div>
+
+                <div className="card justify-content-center align-items-center mx-3" style={{ width: "400px", height: "300px" }}>
+                    <h3>Category 3</h3>
+                </div>
+                
+            </div>
 
         </div >
     )
