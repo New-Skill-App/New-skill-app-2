@@ -42,7 +42,7 @@ function SkillsList(props) {
                 return (
                     <NavLink key={skillDetails.id} to={`skills/${skillDetails.id}`}>
                         <div className="box">
-                            <button >x</button>
+                            <button>x</button>
                             <h3>{skillDetails.name}</h3>
                             <img src={skillDetails.imageURL} alt="skill image" />
                         </div>

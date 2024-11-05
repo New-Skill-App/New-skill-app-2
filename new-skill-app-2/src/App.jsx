@@ -6,8 +6,8 @@ import SideBar from "./components/bars/SideBar"
 import HomePage from "./components/pages/HomePage"
 import AboutPage from "./components/pages/AboutPage"
 import NotFoundPage from "./components/pages/NotFoundPage"
-import VisualArtsPage from "./components/pages/VisualArtsPage"
 import SkillDetailsPage from "./components/pages/SkillDetailsPage"
+import SkillsList from "./components/functionalities/SkillsList"
 
 
 function App() {
@@ -19,14 +19,15 @@ function App() {
         <Header id="header" />
 
         <Routes>
-          <Route path="/" element={<HomePage />}/>          
-          <Route path="/visual-arts-page/*" element={<VisualArtsPage />}/>
-          <Route path="/visual-arts-page/skills/:skillId" element={<SkillDetailsPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/visual-arts-page" element={<SkillsList dataLink={"https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills"} />} />
+          <Route path="/visual-arts-page/skills/:skillId" element={<SkillDetailsPage dataLink={"https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills"} />} />
+          {/* <Route path="/sports-page" element={<SkillsList dataLink={""} />} /> */}
           <Route path="/about-page" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
-      </div>    
+      </div>
     </>
   )
 }

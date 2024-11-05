@@ -11,7 +11,6 @@ function SkillDetailsPage({ dataLink }) {
     useEffect(() => {
         if (dataLink && skillId) {
             const skillUrl = `${dataLink}/${skillId}.json`;
-            console.log(`Fetching URL: ${skillUrl}`); // Debug log
 
             axios.get(skillUrl)
                 .then(response => {
@@ -20,7 +19,7 @@ function SkillDetailsPage({ dataLink }) {
                 })
                 .catch(e => {
                     setError("Error fetching skill details. Please try again.");
-                    setLoading(false); // Ensure loading is stopped
+                    setLoading(false); 
                     console.log(e);
                 });
         }
