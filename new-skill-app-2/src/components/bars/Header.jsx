@@ -5,7 +5,7 @@ function Header() {
 
       <img src="images/logo.png" className="logo" style={{ width: "40px", height:"auto"}} />
 
-      <h5 className="text-center  m-1">{`NewSkill`}</h5>
+      <p className="text-center  m-1">{`NewSkill`}</p>
 
 
     </div>

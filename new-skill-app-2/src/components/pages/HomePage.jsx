@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom"
 function HomePage() {
     return (
         <div
-            className="d-flex flex-column align-items-center vh-100 "
+            className="d-flex flex-column align-items-center 100vh "
             style={{
                 width: "90vw",
                 marginLeft: "10vw",
@@ -17,7 +17,8 @@ function HomePage() {
                     style={{
                         fontSize: "80px",
                         fontWeight: "bold",
-                        textShadow: "2px 2px 2px #000000", letterSpacing: "2px"
+                        textShadow: "2px 2px 2px #000000", 
+                        letterSpacing: "2px"
                     }}>
                     New Skill
                 </h1>
