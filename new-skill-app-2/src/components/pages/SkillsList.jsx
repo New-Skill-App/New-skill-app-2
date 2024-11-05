@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 
-function SkillsList(props) {
+function SkillsList({dataLink}) {
 
     const [skills, setSkills] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(`${props.dataLink}.json`)
+        axios.get(`${dataLink}`)
             .then((response) => {
 
                 const arr = []
@@ -24,7 +24,7 @@ function SkillsList(props) {
                 setError("Error getting skills from the API... Please, try again later.")
                 console.log(e);
             });
-    }, [props.dataLink]);
+    }, [dataLink]);
 
     if(error){
         return (

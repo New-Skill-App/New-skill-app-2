@@ -65,4 +65,7 @@ button:focus-visible {
   border: black;
 }
 
-
+.form {
+  display: flex;
+  flex-direction: column;
+}

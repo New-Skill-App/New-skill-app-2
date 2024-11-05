@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 function HomePage() {
     return (
@@ -13,8 +13,6 @@ function HomePage() {
                     <p className="text-center">Pequena explicação catchy</p>
                 </div>
             </div>
-
-
 
             <h2>Categories</h2>
 
