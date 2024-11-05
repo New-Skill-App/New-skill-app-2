@@ -7,7 +7,7 @@ function HomePage(){
             <p>Pequena explicação catchy</p>
 
             <h2>Categories</h2>
-            <NavLink to="/VisualArtsPage">
+            <NavLink to="/visual-arts-page">
                 <div className="card">Category 1 (Visual Arts)</div>
             </NavLink>
             

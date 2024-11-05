@@ -7,7 +7,7 @@ function SideBar(){
         <button className="">Home</button>
       </NavLink>
 
-      <NavLink to="/AboutPage">
+      <NavLink to="/about-page">
         <button className="">About Page</button>
       </NavLink>
     </aside>

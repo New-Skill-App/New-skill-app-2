@@ -1,46 +1,54 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function SkillsList(props){
+function SkillsList(props) {
 
-    const [skill, setSkill] = useState(null);
+    const [skills, setSkills] = useState(null);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get(props.dataLink)
-            .then( (response) => {
-               
+        axios.get(`${props.dataLink}.json`)
+            .then((response) => {
+
                 const arr = []
-                for(const id in response.data){
-                    arr.push({id: id, ...response.data[id]})
+                for (const id in response.data) {
+                    arr.push({ id: id, ...response.data[id] })
                 }
-               console.log(arr);
-               
-                setSkill(arr);
+                console.log(arr);
+
+                setSkills(arr);
             })
-            .catch( e => {
-                console.log("Error getting skills from the API...");
-                console.log(e);  
-            } );
-    }, []);
+            .catch(e => {
+                setError("Error getting skills from the API... Please, try again later.")
+                console.log(e);
+            });
+    }, [props.dataLink]);
+
+    if(error){
+        return (
+            <h2>{error}</h2>
+        )
+    }
 
     return (
         <>
-            { skill === null 
-                ? <h2>Loading...</h2> 
-                : <h2>{skill.length} skills to explore</h2>  
+            {skills === null
+                ? <h2>Loading...</h2>
+                : <h2>{skills.length} skills to explore</h2>
             }
 
-            { skill &&  skill.map( (skillDetails, index) => {
+            {skills && skills.map((skillDetails) => {
                 return (
-                    <div key={index} className="box">
-                        <button >x</button>
-                        <h3>{skillDetails.name}</h3>
-                        <img src={skillDetails.imageURL} alt="skill image"/>
-                        <Link to={`/skills/visual-arts/${skillDetails.id}`}>More Details</Link>
-                    </div>
+                    <NavLink key={skillDetails.id} to={`skills/${skillDetails.id}`}>
+                        <div className="box">
+                            <button >x</button>
+                            <h3>{skillDetails.name}</h3>
+                            <img src={skillDetails.imageURL} alt="skill image" />
+                        </div>
+                    </NavLink>
                 );
-            } )}
+            })}
         </>
     );
 }
