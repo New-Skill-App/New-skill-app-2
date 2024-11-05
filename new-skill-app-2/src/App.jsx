@@ -12,26 +12,26 @@ import SkillsList from "./components/pages/SkillsList";
 
 function App() {
   const dataLinkVisualArts = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
-  
+
   return (
-    <>
+    <div className="d-flex">
       <SideBar />
       <div className="Main">
         <Header id="header" />
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/visual-arts-page" element={<SkillsList dataLink={dataLinkVisualArts}/>} />
-          <Route 
-            path="/visual-arts-page/skills/:skillId" 
-            element={<SkillDetailsPage dataLink={dataLinkVisualArts} basePath="/visual-arts-page" />} 
+          <Route path="/visual-arts-page" element={<SkillsList dataLink={dataLinkVisualArts} />} />
+          <Route
+            path="/visual-arts-page/skills/:skillId"
+            element={<SkillDetailsPage dataLink={dataLinkVisualArts} basePath="/visual-arts-page" />}
           />
-          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkVisualArts}/>} />
+          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkVisualArts} />} />
           <Route path="/about-page" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
-    </>
+    </div>
   );
 }
 
