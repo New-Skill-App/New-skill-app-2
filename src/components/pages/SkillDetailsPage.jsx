@@ -63,7 +63,7 @@ function SkillDetailsPage({ dataLink, basePath }) {
                                 <p className="skill-info">{skill.resources.join(", ")}</p>
                             </>
                         )}
-                        <div className="d-flex justify-content-end">
+                        <div className="d-flex justify-content-center">
                             <Link to={`${basePath}/skills/${skillId}/edit`}>
                                 <button className="btn btn-primary m-2">Edit</button>
                             </Link>
