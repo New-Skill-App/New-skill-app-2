@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";  
+import { useParams, useNavigate, NavLink } from "react-router-dom";
+
 
 function EditSkillPage({ dataLink }) {
     const { skillId } = useParams();
@@ -11,7 +12,7 @@ function EditSkillPage({ dataLink }) {
     const [description, setDescription] = useState("");
     const [targetAudience, setTargetAudience] = useState("");
     const [imageURL, setImageURL] = useState("");
-    const [resources, setResources] = useState("");
+    const [resources, setResources] = useState([{ type: "", name: "", url: "" }]);
 
     useEffect(() => {
         axios.get(`${dataLink}/${skillId}.json`)
@@ -21,10 +22,27 @@ function EditSkillPage({ dataLink }) {
                 setDescription(response.data.description);
                 setTargetAudience(response.data.targetAudience);
                 setImageURL(response.data.imageURL);
-                setResources(response.data.resources.join(", "));
+                
+                if (Array.isArray(response.data.resources)) {
+                    setResources(response.data.resources);
+                } else {
+                    setResources([{ type: "", name: "", url: "" }]);
+                }
             })
             .catch(e => console.log("Error fetching skill details.", e));
     }, [skillId, dataLink]);
+
+
+    const handleResourceChange = (index, field, value) => {
+        const newResources = [...resources];
+        newResources[index][field] = value;
+        setResources(newResources);
+    };
+
+    const addResource = () => {
+        setResources([...resources, { type: "", name: "", url: "" }]);
+    };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +57,7 @@ function EditSkillPage({ dataLink }) {
         axios.put(`${dataLink}/${skillId}.json`, updatedSkill)
             .then(response => {
                 console.log("Skill updated successfully!", response);
-                navigate(`/visual-arts-page/skills/${skillId}`);  
+                navigate(`/visual-arts-page/skills/${skillId}`);
             })
             .catch(e => console.log("Error updating skill.", e));
     };
@@ -80,10 +98,10 @@ function EditSkillPage({ dataLink }) {
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label>Name of the skill:</label>
-                            <input 
-                                type="text" 
-                                value={name} 
-                                onChange={(e) => setName(e.target.value)} 
+                            <input
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 className="form-control"
                                 required
                             />
@@ -91,45 +109,69 @@ function EditSkillPage({ dataLink }) {
 
                         <div className="form-group">
                             <label>Description:</label>
-                            <textarea 
-                                value={description} 
-                                onChange={(e) => setDescription(e.target.value)} 
+                            <textarea
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
                                 className="form-control"
                             />
                         </div>
 
                         <div className="form-group">
                             <label>Target Audience:</label>
-                            <textarea 
-                                value={targetAudience} 
-                                onChange={(e) => setTargetAudience(e.target.value)} 
+                            <textarea
+                                value={targetAudience}
+                                onChange={(e) => setTargetAudience(e.target.value)}
                                 className="form-control"
                             />
                         </div>
 
                         <div className="form-group">
                             <label>Image URL:</label>
-                            <textarea 
-                                value={imageURL} 
-                                onChange={(e) => setImageURL(e.target.value)} 
+                            <textarea
+                                value={imageURL}
+                                onChange={(e) => setImageURL(e.target.value)}
                                 className="form-control"
                             />
                         </div>
 
                         <div className="form-group">
-                            <label>Resources (comma separated):</label>
-                            <textarea 
-                                value={resources} 
-                                onChange={(e) => setResources(e.target.value)} 
-                                className="form-control"
-                            />
+                            <label>Resources:</label>
+                            {resources.map((resource, index) => (
+                                <div key={index} className="mb-3">
+                                    <input
+                                        type="text"
+                                        placeholder="Type"
+                                        value={resource.type}
+                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Name"
+                                        value={resource.name}
+                                        onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="url"
+                                        placeholder="URL"
+                                        value={resource.url}
+                                        onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                </div>
+                            ))}
+                            <button type="button" onClick={addResource} className="btn btn-secondary mt-2">
+                                Add Resource
+                            </button>
                         </div>
 
                         <button type="submit" className="btn btn-primary mt-3">Save Changes</button>
-            </form>
-        </div> 
-        </div> 
-        </div> 
+                        <NavLink to={`/visual-arts-page/skills/${skillId}`} className="btn btn-secondary">Back</NavLink>
+                    </form>
+                </div>
+            </div>
+        </div>
     )
 }
 
