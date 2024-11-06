@@ -41,31 +41,16 @@ function CreateSkill({ dataLink }) {
     };
 
     return (
-        <div className="d-flex flex-column align-items-center 100vh"
-            style={{
-                width: "90vw",
-                marginLeft: "10vw",
-                background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
-            }}>
-            <div className="d-flex flex-row flex-wrap justify-content-center align-items-center"
-                style={{
-                    width: "70vw",
-                    height: "auto",
-                    backgroundColor: "#E2EBF5",
-                    padding: "20px",
-                    borderRadius: "8px",
-                }}>
+        <div className="skill-details-container">
 
-                <div className="d-flex flex-column"
-                    style={{
-                        width: "100%",
-                        padding: "10px"
-                    }}>
-                    <h3 className="mb-4">Add Skill</h3>
+            <div className="add-skill-details-card">
+
+                <div className="add-skill-info-container">
+                    <h3 className="skill-title">Add Skill</h3>
 
                     <form onSubmit={handleSubmit}>
                         <div className="form-group mb-3">
-                            <label>Name of the skill:</label>
+                            <label>Name:</label>
                             <input 
                                 type="text"
                                 name="name"

@@ -65,39 +65,21 @@ function EditSkillPage({ dataLink }) {
     if (!skill) return <h3>Loading...</h3>;
 
     return (
-        <div className="d-flex flex-column align-items-center 100vh"
-            style={{
-                width: "90vw",
-                marginLeft: "10vw",
-                background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
-            }}>
+        <div className="skill-details-container">
 
-            <div className="d-flex flex-row flex-wrap justify-content-center align-items-center"
-                style={{
-                    width: "70vw",
-                    height: "auto",
-                    backgroundColor: "#E2EBF5",
-                    padding: "20px",
-                    borderRadius: "8px"
-                }}>
+            <div className="skill-details-card">
 
-                <div className="d-flex flex-column align-items-center"
-                    style={{
-                        width: "40%",
-                        height: "100%"
-                    }}>
-                    <h2>Edit Skill: {name}</h2>
-                    {imageURL && <img src={imageURL} alt={name} style={{ maxWidth: "100%", borderRadius: "8px" }} />}
+                <div className="skill-image-title-container">
+                    <h2 className="skill-title">
+                        Edit Skill:</h2>
+
+                    {imageURL && <img src={imageURL} alt={name} className="skill-image" />}
                 </div>
 
-                <div className="d-flex flex-column justify-content-left"
-                    style={{
-                        width: "50%",
-                        padding: "10px"
-                    }}>
+                <div className="skill-info-container">
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label>Name of the skill:</label>
+                            <label> Skill Name:</label>
                             <input
                                 type="text"
                                 value={name}
@@ -166,7 +148,10 @@ function EditSkillPage({ dataLink }) {
                             </button>
                         </div>
 
-                        <button type="submit" className="btn btn-primary mt-3">Save Changes</button>
+                        <div className="save-btn-container">
+                            <button type="submit" className="btn btn-primary m-2">Save Changes</button>
+                        </div>
+                        
                         <NavLink to={`/visual-arts-page/skills/${skillId}`} className="btn btn-secondary">Back</NavLink>
                     </form>
                 </div>
