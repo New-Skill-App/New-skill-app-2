@@ -1,11 +1,11 @@
 function Header() {
 
   return (
-    <div className="d-flex flex-row position-fixed align-items-center" style={{ width: "100vw", top: "20px", marginLeft: "1vw"}}>
+    <div className="header-container">
 
-      <img src="images/logo.png" className="logo" style={{ width: "40px", height:"auto"}} />
+      <img src="images/logo.png" className="logo"  alt="SkillBox Logo" />
 
-      <p className="text-center  m-1">{`SkillBox`}</p>
+      <p className="header-title">{`SkillBox`}</p>
 
 
     </div>

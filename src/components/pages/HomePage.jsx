@@ -2,24 +2,10 @@ import { Link, NavLink } from "react-router-dom"
 
 function HomePage() {
     return (
-        <div
-            className="d-flex flex-column align-items-center 100vh "
-            style={{
-                width: "90vw",
-                marginLeft: "10vw",
-                background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
-            }}
-        >
+        <div className="full-screen-container d-flex flex-column align-items-center 100vh position-fixed">
 
             <div className=" d-flex flex-column align-items-center">
-                <h1
-                    className="m-5"
-                    style={{
-                        fontSize: "80px",
-                        fontWeight: "bold",
-                        textShadow: "2px 2px 2px #000000", 
-                        letterSpacing: "2px"
-                    }}>
+                <h1 className="m-5 project-title">
                     SkillBox
                 </h1>
 
@@ -32,42 +18,22 @@ function HomePage() {
             <h2 className="m-5">Categories</h2>
 
 
-            <div className=" d-flex flex-row justify-content-center align-items-center"
-            style={{
-                        width: "100%",
-                        height: "auto"
-                    }}>
-
-                        
+            <div className="card-container">
                 <NavLink to="/visual-arts-page">
 
                     <div
-                        className="card justify-content-center align-items-center mx-3 shadow rounded mb-3" style={{
-                            width: "400px",
-                            height: "300px",
-                            backgroundColor: "#E2EBF5"
-                        }}>
+                        className=" card card-1">
                         <h3>Category 1 (Visual Arts)</h3>
                     </div>
                 </NavLink>
 
                 <div
-                    className="card justify-content-center align-items-center mx-3 shadow rounded mb-3"
-                    style={{
-                        width: "400px",
-                        height: "300px",
-                        backgroundColor: "#C5D3E8"
-                    }}>
+                    className="card card-2">
                     <h3>Category 2</h3>
                 </div>
 
                 <div
-                    className="card justify-content-center align-items-center mx-3 shadow rounded mb-3"
-                    style={{
-                        width: "400px",
-                        height: "300px",
-                        backgroundColor: "#A1B6D2"
-                    }}>
+                    className="card card-3">
                     <h3>Category 3</h3>
                 </div>
             </div>

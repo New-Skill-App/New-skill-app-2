@@ -4,40 +4,31 @@ function SideBar() {
   return (
 
     <aside
-      className="nav flex-column nav-underline position-fixed vh-100 shadow-lg"
-      style={{
-        width: "10vw",
-        top: "0px",
-        left: "0px",
-        background: "linear-gradient(to right, #FFFF, #A6AEBF)"
-      }}
-    >
+      className="sidebar nav flex-column nav-underline position-fixed vh-100 shadow-lg">
 
-      <div
-        className="d-flex flex-column"
-        style={{ paddingTop: "100px", marginLeft: "1vw" }}
-      >
+      <div className="sidebar-content d-flex flex-column">
+
         <NavLink to="/">
-          <a className="nav-link py-3" style={{ color: "black" }}>
-            <i class="bi bi-house-door" style={{ margin: "8px" }}></i>
+          <a className="nav-link-custom nav-link py-3">
+            <i class="bi bi-house-door"></i>
             Home</a>
         </NavLink>
 
         <NavLink to="/about-page">
-          <a className="nav-link py-3" style={{ color: "black" }}>
-            <i class="bi bi-file-earmark-person" style={{ margin: "8px" }}></i>
+          <a className="nav-link-custom nav-link py-3">
+            <i class="bi bi-file-earmark-person"></i>
             About</a>
         </NavLink>
 
         <NavLink to="/skills/create">
-          <a className="nav-link py-3" style={{ color: "black" }}>
-            <i class="bi bi-file-earmark-plus" style={{ margin: "8px" }}></i>
+          <a className="nav-link-custom nav-link py-3">
+            <i class="bi bi-file-earmark-plus"></i>
             Add Skill</a>
         </NavLink>
 
         <NavLink to="/">
-          <a className="nav-link py-3" style={{ color: "black" }}>
-            <i class="bi bi-file-earmark-person" style={{ margin: "8px" }}></i>
+          <a className="nav-link-custom nav-link py-3">
+            <i class="bi bi-file-earmark-person"></i>
             Categories</a>
         </NavLink>
       </div>
