@@ -20,7 +20,7 @@ function HomePage() {
                         textShadow: "2px 2px 2px #000000", 
                         letterSpacing: "2px"
                     }}>
-                    New Skill
+                    SkillBox
                 </h1>
 
 
