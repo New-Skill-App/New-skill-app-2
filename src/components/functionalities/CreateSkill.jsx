@@ -35,15 +35,16 @@ function CreateSkill({ dataLink }) {
             <div className="add-skill-details-card">
 
                 <div className="add-skill-info-container">
-                    <h3 className="skill-title">Add Skill</h3>
-
+                    <div className="add-skill-title-container">
+                        <h3 className="skill-title">Add Skill</h3>
+                    </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group mb-3">
                             <label>Name:</label>
-                            <input 
+                            <input
                                 type="text"
                                 name="name"
-                                placeholder="Enter the name of the skill" 
+                                placeholder="Enter the name of the skill"
                                 required
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -95,11 +96,13 @@ function CreateSkill({ dataLink }) {
                             />
                         </div>
 
-                        <button type="submit" className="btn btn-primary me-2">Create</button>
-                        <Link to="/" className="btn btn-secondary">Back</Link>
+                        <div className="btns-container">
+                            <button type="submit" className="create-btn btn btn-primary m-2">Create</button>
+                        </div>
                     </form>
                 </div>
             </div>
+            <div><Link to="/" className="back-btn btn btn-secondary m-2 ">Back</Link></div>
         </div>
     );
 }

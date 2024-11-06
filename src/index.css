@@ -18,6 +18,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -46,9 +47,11 @@ buttonn {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 buttonn:hover {
   border-color: #646cff;
 }
+
 buttonn:focus,
 buttonn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -82,11 +85,11 @@ buttonn:focus-visible {
   top: 0px;
 }
 
-.project-title{
-    font-size: 80px;
-    font-weight: bold;
-    text-shadow: 2px 2px 2px #000000;
-    letter-spacing: 2px
+.project-title {
+  font-size: 80px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000000;
+  letter-spacing: 2px
 }
 
 .card {
@@ -109,15 +112,15 @@ buttonn:focus-visible {
   height: auto;
 }
 
-.card-1{
+.card-1 {
   background-color: #E2EBF5;
 }
 
-.card-2{
-  background-color:#C5D3E8;
+.card-2 {
+  background-color: #C5D3E8;
 }
 
-.card-3{
+.card-3 {
   background-color: #A1B6D2;
 }
 
@@ -176,6 +179,24 @@ buttonn:focus-visible {
 .header-title {
   text-align: center;
   margin: 0.25rem;
+}
+
+
+/*ABOUT PAGE*/
+
+.about-container{
+  width: 90vw;
+  margin-left: 10vw;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-title{
+  font-size: 80px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 
@@ -280,6 +301,7 @@ buttonn:focus-visible {
 .skill-title {
   font-size: 2rem;
   font-weight: bold;
+
 }
 
 .skill-image {
@@ -302,7 +324,9 @@ buttonn:focus-visible {
   font-size: 1rem;
 }
 
-.edit-btn-container, .save-btn-container{
+.edit-btn-container,
+.save-btn-container,
+.btns-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -311,28 +335,29 @@ buttonn:focus-visible {
 
 .back-btn-container {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   width: 100%;
   margin-top: 20px;
 }
 
-.back-btn {
+.back-btn,
+.create-btn {
   margin: 1rem;
   justify-content: center;
 }
 
 /*CREATE SKILL PAGE*/
 
-.add-skill-details-card{
+.add-skill-details-card {
   width: 1000px;
   height: auto;
-  margin: 10vh;
+  margin: 10px;
   background-color: #E2EBF5;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -342,7 +367,13 @@ buttonn:focus-visible {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   padding: 20px;
   gap: 5px;
+}
+
+.add-skill-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

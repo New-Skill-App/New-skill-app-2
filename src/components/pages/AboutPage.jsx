@@ -1,11 +1,7 @@
 function AboutPage () {
     return (
-      <div className="d-flex flex-column align-items-center 100vh"
-      style={{
-          width: "90vw",
-          marginLeft: "10vw",
-      }}>
-        <h1>About New Skill</h1>
+      <div className="about-container">
+        <h2 className="about-title">About SkillBox</h2>
         <p>
           {`bla bla bla talk about the project`}
         </p>
