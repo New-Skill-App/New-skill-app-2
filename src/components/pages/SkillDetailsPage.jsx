@@ -1,7 +1,7 @@
 import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import EditSkill from "../functionalities/EditSkill";
+import EditSkill from "../functionalities/EditSkillPage";
 
 function SkillDetailsPage({ dataLink, basePath }) {
     const { skillId } = useParams();
@@ -80,19 +80,18 @@ function SkillDetailsPage({ dataLink, basePath }) {
                             </>
                         )}
                         <div className="d-flex justify-content-end">
-                            <NavLink>
-                                <button className="btn btn-primary m-2">Edit??</button>
-                            </NavLink>
+                            <Link to={`${basePath}/skills/${skillId}/edit`}>
+                                <button className="btn btn-primary m-2">Edit</button>
+                            </Link>
                         </div>
 
                     </div>
                 </div>
                 <div>
-                    <NavLink to={basePath}>
+                    <NavLink to={basePath} >
                         <button className="btn btn-secondary m-3">Back</button>
                     </NavLink>
 
-                    <EditSkill dataLink={dataLink} previousSkill={skill}/>
                 </div>
             </div>
 
