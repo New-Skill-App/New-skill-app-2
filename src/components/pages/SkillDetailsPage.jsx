@@ -60,7 +60,14 @@ function SkillDetailsPage({ dataLink, basePath }) {
                         {skill.resources && (
                             <>
                                 <h5>Resources to improve this skill:</h5>
-                                <p className="skill-info">{skill.resources.join(", ")}</p>
+                                <ul className="skill-info">
+                                    {skill.resources.map((resource, index) => (
+                                        <li key={index}>
+                                            <strong>{resource.type}: </strong> 
+                                            <a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}</a>
+                                        </li>
+                                    ))}
+                                </ul>
                             </>
                         )}
                         <div className="d-flex justify-content-center">

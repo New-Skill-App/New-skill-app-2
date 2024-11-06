@@ -9,7 +9,18 @@ function CreateSkill({ dataLink }) {
     const [description, setDescription] = useState("");
     const [targetAudience, setTargetAudience] = useState("");
     const [imageURL, setImageURL] = useState("");
-    const [resources, setResources] = useState("");
+    const [resources, setResources] = useState([{ type: "", name: "", url: "" }]);
+
+    const handleResourceChange = (index, field, value) => {
+        const newResources = [...resources];
+        newResources[index][field] = value;
+        setResources(newResources);
+    };
+
+    const addResource = () => {
+        setResources([...resources, { type: "", name: "", url: "" }]);
+    };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -19,7 +30,7 @@ function CreateSkill({ dataLink }) {
             description,
             targetAudience,
             imageURL,
-            resources: resources.split(",").map(resource => resource.trim()),
+            resources,
         };
 
         axios.post(`${dataLink}.json`, newSkill)
@@ -85,20 +96,40 @@ function CreateSkill({ dataLink }) {
                             />
                         </div>
 
-                        <div className="form-group mb-3">
-                            <label>Resources (comma separated):</label>
-                            <textarea
-                                name="resources"
-                                placeholder="Enter some possible resources to improve this skill"
-                                value={resources}
-                                onChange={(e) => setResources(e.target.value)}
-                                className="form-control"
-                            />
+                        <div className="form-group">
+                            <label>Resources:</label>
+                            {resources.map((resource, index) => (
+                                <div key={index} className="mb-3">
+                                    <input
+                                        type="text"
+                                        placeholder="Type"
+                                        value={resource.type}
+                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Name"
+                                        value={resource.name}
+                                        onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="url"
+                                        placeholder="URL"
+                                        value={resource.url}
+                                        onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                </div>
+                            ))}
+                            <button type="button" onClick={addResource} className="btn btn-secondary mt-2">
+                                Add Resource
+                            </button>
                         </div>
 
-                        <div className="btns-container">
-                            <button type="submit" className="create-btn btn btn-primary m-2">Create</button>
-                        </div>
+                        <button type="submit" className="btn btn-primary me-2">Add Skill</button>
+                        <Link to="/" className="btn btn-secondary">Back</Link>
                     </form>
                 </div>
             </div>

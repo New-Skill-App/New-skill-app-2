@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, NavLink } from "react-router-dom";
+
 
 function EditSkillPage({ dataLink }) {
     const { skillId } = useParams();
@@ -11,7 +12,7 @@ function EditSkillPage({ dataLink }) {
     const [description, setDescription] = useState("");
     const [targetAudience, setTargetAudience] = useState("");
     const [imageURL, setImageURL] = useState("");
-    const [resources, setResources] = useState("");
+    const [resources, setResources] = useState([{ type: "", name: "", url: "" }]);
 
     useEffect(() => {
         axios.get(`${dataLink}/${skillId}.json`)
@@ -21,10 +22,27 @@ function EditSkillPage({ dataLink }) {
                 setDescription(response.data.description);
                 setTargetAudience(response.data.targetAudience);
                 setImageURL(response.data.imageURL);
-                setResources(response.data.resources.join(", "));
+                
+                if (Array.isArray(response.data.resources)) {
+                    setResources(response.data.resources);
+                } else {
+                    setResources([{ type: "", name: "", url: "" }]);
+                }
             })
             .catch(e => console.log("Error fetching skill details.", e));
     }, [skillId, dataLink]);
+
+
+    const handleResourceChange = (index, field, value) => {
+        const newResources = [...resources];
+        newResources[index][field] = value;
+        setResources(newResources);
+    };
+
+    const addResource = () => {
+        setResources([...resources, { type: "", name: "", url: "" }]);
+    };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -99,18 +117,43 @@ function EditSkillPage({ dataLink }) {
                         </div>
 
                         <div className="form-group">
-                            <label>Resources (comma separated):</label>
-                            <textarea
-                                value={resources}
-                                onChange={(e) => setResources(e.target.value)}
-                                className="form-control"
-                            />
+                            <label>Resources:</label>
+                            {resources.map((resource, index) => (
+                                <div key={index} className="mb-3">
+                                    <input
+                                        type="text"
+                                        placeholder="Type"
+                                        value={resource.type}
+                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Name"
+                                        value={resource.name}
+                                        onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="url"
+                                        placeholder="URL"
+                                        value={resource.url}
+                                        onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                </div>
+                            ))}
+                            <button type="button" onClick={addResource} className="btn btn-secondary mt-2">
+                                Add Resource
+                            </button>
                         </div>
+
                         <div className="save-btn-container">
                             <button type="submit" className="btn btn-primary m-2">Save Changes</button>
                         </div>
+                        
+                        <NavLink to={`/visual-arts-page/skills/${skillId}`} className="btn btn-secondary">Back</NavLink>
                     </form>
-                    
                 </div>
             </div>
         </div>
