@@ -27,7 +27,7 @@ function SkillDetailsPage({ dataLink, basePath }) {
     }, [skillId, dataLink]);
 
     if (loading) {
-        return <h2>Loading skill details...</h2>;
+        return <div className="skill-details-container"><h2 className="loading-message">Loading skill details...</h2></div>;
     }
 
     if (error) {
@@ -72,14 +72,16 @@ function SkillDetailsPage({ dataLink, basePath }) {
                         )}
                         <div className="d-flex justify-content-center">
                             <Link to={`${basePath}/skills/${skillId}/edit`}>
-                                <button className="btn btn-primary m-2">Edit</button>
+                            <div className="edit-btn-container">
+                                <button className="edit-btn btn btn-dark btn-lg m-2">Edit</button>
+                                </div>
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div>
                     <NavLink to={basePath}>
-                        <button className="btn btn-secondary m-3">Back</button>
+                        <button className="back-btn btn btn-secondary btn-sm">Back</button>
                     </NavLink>
 
                 </div>

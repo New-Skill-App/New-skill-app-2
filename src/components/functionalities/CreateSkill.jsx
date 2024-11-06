@@ -123,17 +123,21 @@ function CreateSkill({ dataLink }) {
                                     />
                                 </div>
                             ))}
-                            <button type="button" onClick={addResource} className="btn btn-secondary mt-2">
+                            <div className="add-btn-container">
+                            <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
                                 Add Resource
                             </button>
+                            </div>
                         </div>
 
-                        <button type="submit" className="btn btn-primary me-2">Add Skill</button>
-                        <Link to="/" className="btn btn-secondary">Back</Link>
+                        <div className="save-btn-container">
+                            <button type="submit" className="btn btn-dark btn-lg m-2">Save Skill</button>
+                        </div>
+
                     </form>
                 </div>
             </div>
-            <div><Link to="/" className="back-btn btn btn-secondary m-2 ">Back</Link></div>
+            <div><Link to="/" className="back-btn btn btn btn-secondary btn-sm">Back</Link></div>
         </div>
     );
 }

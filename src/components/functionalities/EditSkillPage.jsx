@@ -22,7 +22,7 @@ function EditSkillPage({ dataLink }) {
                 setDescription(response.data.description);
                 setTargetAudience(response.data.targetAudience);
                 setImageURL(response.data.imageURL);
-                
+
                 if (Array.isArray(response.data.resources)) {
                     setResources(response.data.resources);
                 } else {
@@ -62,7 +62,7 @@ function EditSkillPage({ dataLink }) {
             .catch(e => console.log("Error updating skill.", e));
     };
 
-    if (!skill) return <h3>Loading...</h3>;
+    if (!skill) return <div className="skill-details-card"><h3 className="loading-message">Loading...</h3></div>;
 
     return (
         <div className="skill-details-container">
@@ -143,18 +143,21 @@ function EditSkillPage({ dataLink }) {
                                     />
                                 </div>
                             ))}
-                            <button type="button" onClick={addResource} className="btn btn-secondary mt-2">
+                            <div className="add-btn-container">
+                            <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
                                 Add Resource
                             </button>
+                            </div>
+                            
                         </div>
-
-                        <div className="save-btn-container">
-                            <button type="submit" className="btn btn-primary m-2">Save Changes</button>
-                        </div>
-                        
-                        <NavLink to={`/visual-arts-page/skills/${skillId}`} className="btn btn-secondary">Back</NavLink>
                     </form>
                 </div>
+                <div className="save-btn-container">
+                    <button type="submit" className="btn btn-dark btn-lg m-2">Save Changes</button>
+                </div>
+            </div>
+            <div>
+                <NavLink to={`/visual-arts-page/skills/${skillId}`} className="back-btn btn btn-secondary btn-sm">Back</NavLink>
             </div>
         </div>
     )

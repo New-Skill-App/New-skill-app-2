@@ -23,18 +23,18 @@ function HomePage() {
 
                     <div
                         className=" card card-1">
-                        <h3>Category 1 (Visual Arts)</h3>
+                        <h2>Visual Arts</h2>
                     </div>
                 </NavLink>
 
                 <div
                     className="card card-2">
-                    <h3>Category 2</h3>
+                    <h2>Category 2</h2>
                 </div>
 
                 <div
                     className="card card-3">
-                    <h3>Category 3</h3>
+                    <h2>Category 3</h2>
                 </div>
             </div>
         </div >
