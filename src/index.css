@@ -122,8 +122,13 @@ h1 {
 .sidebar-content {
   padding-top: 100px;
   margin-left: 1vw;
+  border-bottom: 1px solid #000000;
 }
 
+.sidebar-categories {
+  padding-top: 20px;
+  margin-left: 1vw;
+}
 
 .nav-link-custom {
   color: black;

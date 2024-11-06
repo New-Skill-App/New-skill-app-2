@@ -26,12 +26,34 @@ function SideBar() {
             Add Skill</a>
         </NavLink>
 
-        <NavLink to="/">
+      </div>
+
+      <div className="sidebar-categories d-flex flex-column">
+      <NavLink to="/">
           <a className="nav-link-custom nav-link py-3">
-            <i class="bi bi-file-earmark-person"></i>
             Categories</a>
         </NavLink>
-      </div>
+
+        <NavLink to="/visual-arts-page">
+          <a className="nav-link-custom nav-link py-3">
+          <i class="bi bi-brush"></i>
+            Visual Arts</a>
+        </NavLink>
+
+        <NavLink to="/visual-arts-page">
+          <a className="nav-link-custom nav-link py-3">
+          <i class="bi bi-brush"></i>
+            Category 2</a>
+        </NavLink>
+
+        <NavLink to="/visual-arts-page">
+          <a className="nav-link-custom nav-link py-3">
+          <i class="bi bi-brush"></i>
+          Category 3</a>
+        </NavLink>
+
+        </div>
+
     </aside>
   );
 };
