@@ -45,16 +45,10 @@ function SkillsList({ dataLink }) {
 
     return (
         <>
-            <div className="d-flex flex-column align-items-center 100vh "
-                style={{
-                    width: "90vw",
-                    marginLeft: "10vw",
-                    background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
-                }}>
+            <div className="skills-list-container d-flex flex-column align-items-center 100vh ">
                 {skills === null
-                    ? <h2>Loading...</h2>
-                    : <h2 className="m-5"
-                        style={{ fontWeight: "bold" }}> {skills.length} Skills To Explore</h2>}
+                    ? <h2 className="loading-message">Loading...</h2>
+                    : <h2 className="skills-title"> {skills.length} Skills To Explore</h2>}
 
 
                 <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
@@ -62,32 +56,23 @@ function SkillsList({ dataLink }) {
                     {skills && skills.map((skillDetails) => {
                         return (
                             <div >
-                                <div key={skillDetails.id} className="card justify-content-center align-items-center mx-3 shadow rounded mb-3"
-                                    style={{
-                                        width: "400px",
-                                        height: "500px",
-                                        backgroundColor: "#E2EBF5"
-                                    }}>
+                                <div key={skillDetails.id} className="skill-card">
 
                                     <button
-                                        className="btn btn-link position-absolute"
-                                        style={{
-                                            top: "10px",
-                                            right: "10px",
-                                            zIndex: "10",
-                                            color: "black"
-                                        }}
+                                        className="btn btn-link delete-btn"
                                         onClick={() => deleteSkill(skillDetails.id)}>
-                                        <i className="bi bi-x-square"></i>
+                                        <i class="bi bi-trash"></i>
                                     </button>
 
 
                                     <NavLink to={`skills/${skillDetails.id}`}>
-
-                                        <img src={skillDetails.imageURL} className="card-img-top" alt="skill image" />
-                                        <h3 className="card-title"
-                                            style={{ color: "black" }}>
-                                            {skillDetails.name}</h3>
+                                        <div className="card-img-container">
+                                            <img 
+                                            src={skillDetails.imageURL} 
+                                            className="card-img" 
+                                            alt="skill image" />
+                                        </div>
+                                        <h3 className="card-title">{skillDetails.name}</h3>
                                     </NavLink>
 
                                 </div>

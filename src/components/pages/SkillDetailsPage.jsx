@@ -40,43 +40,27 @@ function SkillDetailsPage({ dataLink, basePath }) {
 
     return (
         <>
-            <div className="d-flex flex-column align-items-center 100vh "
-                style={{
-                    width: "90vw",
-                    marginLeft: "10vw",
-                    background: "linear-gradient(to right, #FFFFFF, #FAF9F6)"
-                }}>
+            <div className="skill-details-container">
 
+                <div className="skill-details-card">
 
-                <div className="d-flex flex-row flex-wrap justify-content-center align-items-center"
-                    style={{
-                        width: "70vw",
-                        height: "auto",
-                        backgroundColor: "#E2EBF5"
-                    }}>
+                    <div className="skill-image-title-container">
+                        <h2 className="skill-title">{skill.name}</h2>
 
-                    <div className="d-flex flex-column align-items-center"
-                        style={{
-                            width: "40%",
-                            height: "100%"
-                        }}>
-                        <h2>{skill.name}</h2>
-                        {skill.imageURL && <img src={skill.imageURL} alt={skill.name} />}
+                        {skill.imageURL && <img src={skill.imageURL} alt={skill.name} className="skill-image" />}
                     </div>
 
-                    <div className="d-flex flex-column justify-content-left"
-                        style={{
-                            width: "40%",
-                            height: "100%"
-                        }}>
-                        <h5>Target Audience: </h5> <p>{skill.targetAudience}</p>
+                    <div className="skill-info-container">
+                        <h5>Target Audience: </h5> 
+                        <p className="skill-info">{skill.targetAudience}</p>
 
-                        <h5>Description:</h5> <p>{skill.description}</p>
+                        <h5>Description:</h5> 
+                        <p className="skill-info">{skill.description}</p>
 
                         {skill.resources && (
                             <>
                                 <h5>Resources to improve this skill:</h5>
-                                <p>{skill.resources.join(", ")}</p>
+                                <p className="skill-info">{skill.resources.join(", ")}</p>
                             </>
                         )}
                         <div className="d-flex justify-content-end">
@@ -84,15 +68,15 @@ function SkillDetailsPage({ dataLink, basePath }) {
                                 <button className="btn btn-primary m-2">Edit</button>
                             </Link>
                         </div>
-
                     </div>
                 </div>
                 <div>
-                    <NavLink to={basePath} >
+                    <NavLink to={basePath}>
                         <button className="btn btn-secondary m-3">Back</button>
                     </NavLink>
 
                 </div>
+
             </div>
 
         </>
