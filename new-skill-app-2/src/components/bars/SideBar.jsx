@@ -34,6 +34,12 @@ function SideBar() {
             <i class="bi bi-file-earmark-plus" style={{ margin: "8px" }}></i>
             Add Skill</a>
         </NavLink>
+
+        <NavLink to="/">
+          <a className="nav-link py-3" style={{ color: "black" }}>
+            <i class="bi bi-house-door" style={{ margin: "8px" }}></i>
+            Categories</a>
+        </NavLink>
       </div>
     </aside>
   );
