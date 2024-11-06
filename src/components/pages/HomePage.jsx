@@ -9,18 +9,23 @@ function HomePage() {
                     SkillBox
                 </h1>
 
+                <div className="d-flex justify-content-center align-items-center">
+                    <h2 className="text-center">Unlock your potential</h2>
+                </div>
 
                 <div className="d-flex justify-content-center align-items-center">
-                    <p className="text-center">Pequena explicação catchy</p>
+                    <h2 className="text-center">Discover and master new skills with SkillBox</h2>
                 </div>
-            </div>
 
-            <h2 className="m-5">Categories</h2>
+                <div className="d-flex justify-content-center align-items-center">
+                    <h3 className="text-center">The app that connects you to top schools, courses, and resources for learning and growth</h3>
+                </div>
+
+            </div>
 
 
             <div className="card-container">
                 <NavLink to="/visual-arts-page">
-
                     <div
                         className=" card card-1">
                         <h2>Visual Arts</h2>
@@ -29,13 +34,15 @@ function HomePage() {
 
                 <div
                     className="card card-2">
-                    <h2>Category 2</h2>
+                    <h2>Sports</h2>
                 </div>
 
                 <div
                     className="card card-3">
-                    <h2>Category 3</h2>
+                    <h2>Music</h2>
                 </div>
+
+                
             </div>
         </div >
     )
