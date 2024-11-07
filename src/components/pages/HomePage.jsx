@@ -6,7 +6,7 @@ function HomePage() {
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">
-                    <img className="home-page-img" src="images/logo line cutted grey.png" />
+                    <img className="home-page-img" src="images/logo line cutted orange.png" />
                 </div>
 
 
@@ -16,7 +16,7 @@ function HomePage() {
                     </div>
 
                     <div className="slogan d-flex justify-content-center align-items-center">
-                        <h2 className="text-center">Discover and master new skills with SkillBox</h2>
+                        <h2 className="text-center">Discover and master new skills</h2>
                     </div>
 
                     <div className="slogan d-flex justify-content-center align-items-center">
