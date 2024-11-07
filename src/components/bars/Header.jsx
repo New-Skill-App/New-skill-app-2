@@ -1,10 +1,10 @@
 function Header() {
 
   return (
-    <div className="header-container nav flex-row nav-underline position-fixed vh-100 shadow-lg">
+    <div className="header-container flex-row position-relative">
       <div className="search-bar">
-        Search 
-        <input type="search" />
+      <i class="bi bi-search"></i> 
+        <input type="search" placeholder="Type to search..." />
       </div>
     </div>
 

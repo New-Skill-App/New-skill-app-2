@@ -4,7 +4,7 @@ function SideBar() {
   return (
 
     <aside
-      className="sidebar nav flex-column nav-underline position-fixed vh-100 shadow-lg">
+      className="sidebar nav flex-column nav-underline position-fixed shadow-lg">
 
       <div className="sidebar-content d-flex flex-column">
 
@@ -46,13 +46,13 @@ function SideBar() {
 
         <NavLink to="/sports-page">
           <a className="nav-link-custom nav-link py-3">
-          <i class="bi bi-brush"></i>
+          <i class="bi bi-bicycle"></i>
             Sports</a>
         </NavLink>
 
         <NavLink to="*">
           <a className="nav-link-custom nav-link py-3">
-          <i class="bi bi-brush"></i>
+          <i class="bi bi-music-note-beamed"></i>
           Music</a>
         </NavLink>
 

@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom"
 
 function HomePage() {
     return (
-        <div className="full-screen-container d-flex flex-column align-items-center 100vh position-fixed">
+        <div className="full-screen-container d-flex flex-column align-items-center">
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">

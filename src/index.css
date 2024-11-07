@@ -1,9 +1,10 @@
 
+
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  align-items: center;
+  min-width: 100vh;
   min-height: 100vh;
   background: linear-gradient(to right, #FFFFFF, #FAF9F6);
 }
@@ -42,9 +43,15 @@ h2 {
 /*HOMEPAGE*/
 
 .full-screen-container {
-  width: 90vw;
+  width: calc(100vw - 10vw);
+  min-height: 100vh;
   margin-left: 10vw;
-  top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #FFFFFF, #FAF9F6);
+  box-sizing: border-box;
 }
 
 .project-title {
@@ -55,13 +62,11 @@ h2 {
 }
 
 .text-container{
-  width: 80vw;
-  height: auto;
+  width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin-top: 20px;
   gap: 20px;
   text-align: center;
 }
@@ -84,14 +89,15 @@ h2 {
   margin: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  text-align: center;
 }
 
 .card-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .card-container a,
@@ -118,7 +124,8 @@ text-decoration: none;
 .home-page-img {
   width: 50vw;
   height: auto;
-  padding-top: 2vh;
+  padding-top: 10vh;
+  margin: 10px;
 }
 
 /*SIDEBAR*/
@@ -128,6 +135,7 @@ text-decoration: none;
   top: 0px;
   left: 0px;
   background: #223957;
+  height: 100vh;
 }
 
 .sidebar-container{
@@ -168,29 +176,42 @@ text-decoration: none;
 /*HEADER*/
 
 .header-container {
-  width: 100vw;
-  height: 5vh;
-  top: 0;
-  align-items: right;
-  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 .search-bar {
-  text-align: center;
-  margin: 0.25rem;
-  height: 5vh;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%; 
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.search-bar input {
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 
 /*ABOUT PAGE*/
 
 .about-container {
-  width: 90vw;
-  margin-left: 10vw;
-  top: 0px;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+  text-align: center;
 }
 
 .about-title {
@@ -198,6 +219,7 @@ text-decoration: none;
   font-weight: bold;
   letter-spacing: 2px;
 }
+
 
 
 /*SKILLS LIST*/
