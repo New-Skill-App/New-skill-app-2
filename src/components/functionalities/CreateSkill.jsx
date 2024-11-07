@@ -50,7 +50,18 @@ function CreateSkill({ dataLink }) {
                         <h3 className="skill-title">Add Skill</h3>
                     </div>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group mb-3">
+
+                    <div className="form-group mb-3">
+                        <label for="categories">Choose a Category:  </label>
+                        <select id="categories" name="categories">
+                            <option value="apple">Visual Arts</option>
+                            <option value="banana">Sports</option>
+                            <option value="cherry">Music</option>
+                        </select>
+                    </div>
+
+                       
+                       <div className="form-group mb-3">
                             <label>Name:</label>
                             <input
                                 type="text"

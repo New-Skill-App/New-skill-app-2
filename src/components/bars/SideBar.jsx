@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function SideBar() {
   return (
@@ -40,16 +40,16 @@ function SideBar() {
             Visual Arts</a>
         </NavLink>
 
-        <NavLink to="/visual-arts-page">
+        <NavLink to="/sports-page">
           <a className="nav-link-custom nav-link py-3">
           <i class="bi bi-brush"></i>
-            Category 2</a>
+            Sports</a>
         </NavLink>
 
-        <NavLink to="/visual-arts-page">
+        <NavLink to="*">
           <a className="nav-link-custom nav-link py-3">
           <i class="bi bi-brush"></i>
-          Category 3</a>
+          Music</a>
         </NavLink>
 
         </div>
