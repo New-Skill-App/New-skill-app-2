@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function CreateSkill({ dataLink }) {
 
+    const navigate = useNavigate();
+    
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [targetAudience, setTargetAudience] = useState("");
@@ -36,6 +38,7 @@ function CreateSkill({ dataLink }) {
         axios.post(`${dataLink}.json`, newSkill)
             .then(response => {
                 console.log(response);
+                navigate(`/visual-arts-page`)
             })
             .catch(e => console.log("Error creating a new skill...", e));
     };
@@ -113,23 +116,24 @@ function CreateSkill({ dataLink }) {
                                 <div key={index} className="mb-3">
                                     <input
                                         type="text"
-                                        placeholder="Type"
-                                        value={resource.type}
-                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
-                                        className="form-control mb-1"
-                                    />
-                                    <input
-                                        type="text"
                                         placeholder="Name"
                                         value={resource.name}
                                         onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
                                         className="form-control mb-1"
+                                        required
                                     />
                                     <input
                                         type="url"
                                         placeholder="URL"
                                         value={resource.url}
                                         onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Type (School / Platform / Tutorial / etc.)"
+                                        value={resource.type}
+                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
                                         className="form-control mb-1"
                                     />
                                 </div>

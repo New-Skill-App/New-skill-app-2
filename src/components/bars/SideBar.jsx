@@ -22,7 +22,7 @@ function SideBar() {
         <NavLink to="/about-page">
           <a className="nav-link-custom nav-link py-3">
             <i class="bi bi-file-earmark-person"></i>
-            About</a>
+            About Us</a>
         </NavLink>
 
         <NavLink to="/skills/create">

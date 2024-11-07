@@ -53,7 +53,7 @@ function SkillsList({ dataLink }) {
 
                 <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
 
-                    {skills && skills.map((skillDetails) => {
+                    {skills && skills.toReversed().map((skillDetails) => {
                         return (
                             <div >
                                 <div key={skillDetails.id} className="skill-card">
