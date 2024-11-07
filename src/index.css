@@ -97,7 +97,9 @@ h2 {
 }
 
 .card-container a,
-.sidebar a {
+.sidebar a,
+.nav-link-custom,
+.card-title{
 text-decoration: none;
 }
 
@@ -123,6 +125,12 @@ text-decoration: none;
   padding-top: 10vh;
   margin: 10px;
 }
+
+.card-container .card h3.card-title {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /*SIDEBAR*/
 
@@ -201,6 +209,26 @@ text-decoration: none;
   box-sizing: border-box;
 }
 
+/*FOOTER*/
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  background-color:#223957;
+  justify-content: right;
+  height: 5vh;
+  width: 100vw;
+  margin-top: 30vh;
+  position: absolute;
+}
+
+.footer a {
+color: white;
+text-decoration: none;
+font-size: small;
+margin-right: 10vh;
+}
+
 
 /*ABOUT PAGE*/
 
@@ -269,6 +297,12 @@ text-decoration: none;
   color: black;
   text-align: center;
   margin: 1rem;
+  text-decoration: none;
+}
+
+.card-container .card-title {
+  text-decoration: none;
+  color: inherit;
 }
 
 
@@ -285,6 +319,13 @@ text-decoration: none;
   text-align: center;
 }
 
+.card-container .card a, 
+.card-title {
+    text-decoration: none;
+    color: black;
+}
+
+
 
 /*SKILL DETAILS PAGE*/
 
@@ -296,7 +337,6 @@ text-decoration: none;
   flex-direction: column;
   align-items: center;
 }
-
 
 .skill-details-card {
   width: 1000px;
@@ -323,6 +363,7 @@ text-decoration: none;
 .skill-title {
   font-size: 2rem;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .skill-image {
@@ -478,6 +519,8 @@ text-decoration: none;
       flex-direction: column;
       width: 100%;
   }
+  
+
 
   .sidebar,
   .sidebar-container,

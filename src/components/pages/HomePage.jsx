@@ -47,7 +47,7 @@ function HomePage() {
                     <h2>Music</h2>
                 </div>
 
-                <div
+                {/* <div
                     className="card card-2">
                     <h2>Data Analyzation</h2>
                 </div>
@@ -61,7 +61,7 @@ function HomePage() {
                 <div
                     className="card card-3">
                     <h2>Languages</h2>
-                </div>
+                </div> */}
 
             </div>
         </div >

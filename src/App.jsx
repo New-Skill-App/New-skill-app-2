@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/bars/Header";
 import SideBar from "./components/bars/SideBar";
+import Footer from "./components/bars/Footer";
 
 import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
@@ -42,10 +43,12 @@ function App() {
             path="/sports-page/skills/:skillId"
             element={<SkillDetailsPage dataLink={dataLinkSports} basePath="/sports-page" />}
           />
+
           <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkSports} />} />
           <Route path="/sports-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkSports} />} />
 
         </Routes>
+        <Footer id="footer" />
       </div>
     </div>
   );
