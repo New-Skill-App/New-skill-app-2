@@ -8,6 +8,10 @@ function SideBar() {
 
       <div className="sidebar-content d-flex flex-column">
 
+      <div className="header-container">
+        <img src="images/logo 2 letras linha.png" className="logo" alt="SkillBox Logo" />
+      </div>
+
         <NavLink to="/">
           <a className="nav-link-custom nav-link py-3">
             <i class="bi bi-house-door"></i>
