@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from '/Users/marianafrazao/ironhack/module2/skill-box/images/logo 2 letras linha.png';
 
 function SideBar() {
   return (
@@ -9,7 +10,7 @@ function SideBar() {
       <div className="sidebar-content d-flex flex-column">
 
       <div className="sidebar-container">
-        <img src="images/logo 2 letras linha.png" className="logo" alt="SkillBox Logo" />
+        <img src={logo} className="logo" alt="SkillBox Logo" />
       </div>
 
         <NavLink to="/">
