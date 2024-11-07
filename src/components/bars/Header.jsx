@@ -1,12 +1,11 @@
 function Header() {
 
   return (
-    <div className="NavBar">
+    <div className="navBar">
       
-      <div>
-        Search
+      <div className="search-bar">
+        Search 
         <input type="search" />
-
       </div>
 
     </div>
