@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
+import logoHomePage from "/images/logoHomePage.png";
 
 function HomePage() {
     return (
@@ -6,7 +7,7 @@ function HomePage() {
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">
-                    <img className="home-page-img" src="images/logo line cutted orange.png" />
+                    <img className="home-page-img" src={logoHomePage} alt="Logo" /> 
                 </div>
 
 
