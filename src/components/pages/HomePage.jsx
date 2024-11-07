@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import bigLogo from '/Users/marianafrazao/ironhack/module2/skill-box/images/logo line cutted orange.png';
+import logoHomePage from "/images/logoHomePage.png";
 
 function HomePage() {
     return (
@@ -7,7 +7,7 @@ function HomePage() {
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">
-                    <img className="home-page-img" src={bigLogo} alt="Logo" /> 
+                    <img className="home-page-img" src={logoHomePage} alt="Logo" /> 
                 </div>
 
 
