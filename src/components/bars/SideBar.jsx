@@ -40,7 +40,7 @@ function SideBar() {
             Visual Arts</a>
         </NavLink>
 
-        <NavLink to="*">
+        <NavLink to="/sports-page">
           <a className="nav-link-custom nav-link py-3">
           <i class="bi bi-brush"></i>
             Sports</a>
