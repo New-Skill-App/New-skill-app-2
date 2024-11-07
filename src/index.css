@@ -36,6 +36,10 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
 
 .logo {
   display: flex;
