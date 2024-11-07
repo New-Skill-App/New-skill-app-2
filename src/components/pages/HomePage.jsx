@@ -5,9 +5,10 @@ function HomePage() {
         <div className="full-screen-container d-flex flex-column align-items-center 100vh position-fixed">
 
             <div className=" d-flex flex-column align-items-center">
-                <h1 className="m-5 project-title">
-                    SkillBox
-                </h1>
+                <div className="d-flex justify-content-center align-items-center">
+                    <img className="home-page-img" src="images/logo line cutted grey.png" />
+                </div>
+
 
                 <div className="d-flex justify-content-center align-items-center">
                     <h2 className="text-center">Unlock your potential</h2>
@@ -44,7 +45,7 @@ function HomePage() {
                     <h2>Music</h2>
                 </div>
 
-{/* 
+                {/* 
                 <div
                     className="card card-4">
                     <h2>Data Analyzation</h2>
@@ -61,7 +62,7 @@ function HomePage() {
                     <h2>Languages</h2>
                 </div> */}
 
-                
+
             </div>
         </div >
     )
