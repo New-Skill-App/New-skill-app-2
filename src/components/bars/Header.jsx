@@ -1,16 +1,20 @@
-import logo from "/images/logo.png"
-
 function Header() {
 
   return (
-    <div className="header-container">
+    <div className="NavBar">
+      
+      <div>
+        Search
+        <input type="search" />
 
-      <img src="images/logo.png" className="logo"  alt="SkillBox Logo" />
+      </div>
 
-      <p className="header-title">{`SkillBox`}</p>
-
-
+      <div className="header-container">
+        <img src="images/logo.png" className="logo" alt="SkillBox Logo" />
+        <p className="header-title">{`SkillBox`}</p>
+      </div>
     </div>
+
   );
 };
 

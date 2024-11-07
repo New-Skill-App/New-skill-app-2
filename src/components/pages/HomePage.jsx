@@ -32,15 +32,34 @@ function HomePage() {
                     </div>
                 </NavLink>
 
-                <div
-                    className="card card-2">
-                    <h2>Sports</h2>
-                </div>
+                <NavLink to="/sports-page">
+                    <div
+                        className="card card-2">
+                        <h2>Sports</h2>
+                    </div>
+                </NavLink>
 
                 <div
                     className="card card-3">
                     <h2>Music</h2>
                 </div>
+
+{/* 
+                <div
+                    className="card card-4">
+                    <h2>Data Analyzation</h2>
+                </div>
+
+                <div
+                    className="card card-5">
+                    <h2>Coding</h2>
+                </div>
+
+
+                <div
+                    className="card card-6">
+                    <h2>Languages</h2>
+                </div> */}
 
                 
             </div>

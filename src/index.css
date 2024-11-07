@@ -367,3 +367,25 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+
+/* Acrescentado pela Mariana - ver o que é preciso alterar */
+
+.NavBar {
+  background-color: rgb(160, 169, 187);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 20px;
+}
+
+.span {
+  margin: 10px;
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+}
