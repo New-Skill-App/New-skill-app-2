@@ -151,9 +151,9 @@ h2 {
 /*HEADER*/
 
 .header-container {
-  width: 100vw;
+  width: 10vw;
   top: 20px;
-  margin-left: 1vw;
+  margin-left: 1px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -169,6 +169,16 @@ h2 {
   text-align: center;
   margin: 0.25rem;
 }
+
+.navBar {
+  width: 100vw;
+  top: 20px;
+  margin-left: 10vw;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+}
+
 
 
 /*ABOUT PAGE*/
