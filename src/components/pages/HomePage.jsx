@@ -10,19 +10,20 @@ function HomePage() {
                 </div>
 
 
-                <div className="d-flex justify-content-center align-items-center">
-                    <h2 className="text-center">Unlock your potential</h2>
-                </div>
+                <div className="text-container">
+                    <div className="slogan d-flex justify-content-center align-items-center">
+                        <h2 className="text-center">UNLOCK YOUR POTENTIAL</h2>
+                    </div>
 
-                <div className="d-flex justify-content-center align-items-center">
-                    <h2 className="text-center">Discover and master new skills with SkillBox</h2>
-                </div>
+                    <div className="slogan d-flex justify-content-center align-items-center">
+                        <h2 className="text-center">Discover and master new skills with SkillBox</h2>
+                    </div>
 
-                <div className="d-flex justify-content-center align-items-center">
-                    <h3 className="text-center">The app that connects you to top schools, courses, and resources for learning and growth</h3>
+                    <div className="slogan d-flex justify-content-center align-items-center">
+                        <h3 className="text-center">The app that connects you to top schools, courses, and resources for learning and growth</h3>
+                    </div>
                 </div>
-
-            </div>
+            </div >
 
 
             <div className="card-container">
