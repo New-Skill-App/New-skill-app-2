@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: content-box ;
+}
 
 body {
   margin: 0;
@@ -43,7 +45,7 @@ h2 {
 /*HOMEPAGE*/
 
 .full-screen-container {
-  width: calc(100vw - 10vw);
+  width: 90vw;
   min-height: 100vh;
   margin-left: 10vw;
   display: flex;
@@ -409,3 +411,147 @@ text-decoration: none;
   align-items: center;
 }
 
+
+/* alterações do responsiveness */
+
+.burger-menu {
+  display: none; /* Hidden by default on larger screens */
+}
+
+.sidebar {
+  width: 10vw;
+  top: 0;
+  left: 0;
+  background: #223957;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0); /* Ensure it is visible by default */
+}
+
+@media (max-width: 425px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .burger-bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+  }
+
+  .sidebar {
+    position: fixed;
+    transform: translateX(-100%); /* Hide sidebar by pushing it off-screen */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+}
+
+
+@media (max-width: 425px) {
+  body {
+    width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .project-title,
+  .about-title {
+      font-size: 30px;
+  }
+
+  .slogan h2 {
+      font-size: 20px;
+  }
+
+  .card {
+      width: 100%;
+      margin: 10px 0;
+  }
+
+  .card-container {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .sidebar,
+  .sidebar-container,
+  .full-screen-container,
+  .skills-list-container,
+  .skill-details-container {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  .sidebar-container, .sidebar-content, .sidebar-categories, .header-container {
+      align-items: center;
+      text-align: center;
+  }
+
+  .sidebar-container {
+      margin-bottom: 20px;
+      width: 100%;
+  }
+
+  .header-container {
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px 0;
+      position: static;
+  }
+
+  .home-page-img {
+      width: 80%;
+      padding-top: 0;
+      margin: 0 auto;
+  }
+
+  .search-bar {
+      max-width: 300px;
+  }
+
+  .skill-details-card, 
+  .add-skill-details-card {
+      width: 90%;
+      margin: 5vh auto;
+      padding: 10px;
+  }
+
+  .skill-image-title-container {
+      width: 90%;
+      height: auto;
+      margin-top: 20px;
+  }
+
+  .skill-image {
+      width: 100%;
+  }
+  
+  .skill-info-container {
+      width: 100%;
+      padding: 10px;
+  }
+  
+  .skill-title {
+      font-size: 1.5rem;
+  }
+
+  .form-group {
+      width: 100%;
+  }
+
+  .con, .form-group.mb-3 textarea {
+      width: 100%;
+  }
+}
