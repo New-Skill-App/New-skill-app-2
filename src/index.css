@@ -130,6 +130,15 @@ text-decoration: none;
   background: #223957;
 }
 
+.sidebar-container{
+  width: 10vw;
+  top: 20px;
+  margin-left: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+}
 
 .sidebar-content {
   padding-top: 100px;
@@ -159,32 +168,17 @@ text-decoration: none;
 /*HEADER*/
 
 .header-container {
-  width: 10vw;
-  top: 20px;
-  margin-left: 1px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
-}
-
-.header-title {
-  text-align: center;
-  margin: 0.25rem;
-}
-
-.navBar {
   width: 100vw;
-  top: 20px;
-  margin-left: 10vw;
-  display: flex;
-  flex-direction: row;
+  height: 5vh;
+  top: 0;
+  align-items: right;
   position: fixed;
 }
 
 .search-bar {
   text-align: center;
   margin: 0.25rem;
+  height: 5vh;
 }
 
 
@@ -389,19 +383,3 @@ text-decoration: none;
   align-items: center;
 }
 
-
-/* Acrescentado pela Mariana - ver o que é preciso alterar */
-
-.NavBar {
-  background-color: rgb(160, 169, 187);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-  font-size: 20px;
-}
-
-.span {
-  margin: 10px;
-}

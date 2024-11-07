@@ -8,7 +8,7 @@ function SideBar() {
 
       <div className="sidebar-content d-flex flex-column">
 
-      <div className="header-container">
+      <div className="sidebar-container">
         <img src="images/logo 2 letras linha.png" className="logo" alt="SkillBox Logo" />
       </div>
 
