@@ -1,7 +1,6 @@
 import { Link, NavLink, useParams } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import EditSkill from "../functionalities/EditSkillPage";
 
 function SkillDetailsPage({ dataLink, basePath }) {
     const { skillId } = useParams();
