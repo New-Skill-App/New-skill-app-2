@@ -51,7 +51,7 @@ function EditSkillPage({ dataLink }) {
             description: description,
             targetAudience: targetAudience,
             imageURL: imageURL,
-            resources: resources.split(",").map(resource => resource.trim()),
+            resources: resources,
         };
 
         axios.put(`${dataLink}/${skillId}.json`, updatedSkill)
@@ -153,7 +153,7 @@ function EditSkillPage({ dataLink }) {
                     </form>
                 </div>
                 <div className="save-btn-container">
-                    <button type="submit" className="btn btn-dark btn-lg m-2">Save Changes</button>
+                    <button to={`/visual-arts-page/skills/${skillId}`} onClick={handleSubmit} type="submit" className="btn btn-dark btn-lg m-2">Save Changes</button>
                 </div>
             </div>
             <div>
