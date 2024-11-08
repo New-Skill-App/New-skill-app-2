@@ -7,7 +7,7 @@ function HomePage() {
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">
-                    <img className="home-page-img" src={logoHomePage} alt="Logo" /> 
+                    <img className="home-page-img" src={logoHomePage} alt="Logo" />
                 </div>
 
 
@@ -42,10 +42,13 @@ function HomePage() {
                     </div>
                 </NavLink>
 
-                <div
-                    className="card card-3">
-                    <h2>Music</h2>
-                </div>
+
+                <NavLink to="/music-page">
+                    <div
+                        className="card card-3">
+                        <h2>Music</h2>
+                    </div>
+                </NavLink>
 
                 {/* <div
                     className="card card-2">
@@ -63,7 +66,7 @@ function HomePage() {
                     <h2>Languages</h2>
                 </div> */}
 
-            </div>
+            </div >
         </div >
     )
 }

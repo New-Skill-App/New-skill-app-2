@@ -14,6 +14,7 @@ import EditSkillPage from "./components/functionalities/EditSkillPage";
 function App() {
   const dataLinkVisualArts = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
   const dataLinkSports = "https://skills-sports-default-rtdb.europe-west1.firebasedatabase.app/skills"
+  const dataLinkMusic = "https://skills-music-default-rtdb.europe-west1.firebasedatabase.app/skills"
 
   return (
     <div className="d-flex">
@@ -43,9 +44,18 @@ function App() {
             path="/sports-page/skills/:skillId"
             element={<SkillDetailsPage dataLink={dataLinkSports} basePath="/sports-page" />}
           />
-
           <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkSports} />} />
           <Route path="/sports-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkSports} />} />
+
+          {/* Music Related Routes */}
+          <Route path="/music-page" element={<SkillsList dataLink={dataLinkMusic} />} />
+          <Route
+            path="/music-page/skills/:skillId"
+            element={<SkillDetailsPage dataLink={dataLinkMusic} basePath="/music-page" />}
+          />
+
+          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkMusic} />} />
+          <Route path="/music-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkMusic} />} />
 
         </Routes>
         <Footer id="footer" />
