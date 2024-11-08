@@ -48,9 +48,9 @@ function SkillsList({ dataLink }) {
             <div className="skills-list-container d-flex flex-column align-items-center 100vh ">
                 {skills === null
                     ? <h2 className="loading-message">Loading...</h2>
-                    : <h2 className="skills-title"> 
-                    <h2 className="num-skills">{skills.length}</h2> 
-                    Skills To Explore</h2>}
+                    : <h2 className="skills-title">
+                        <h2 className="num-skills">{skills.length}</h2>
+                        Skills To Explore</h2>}
 
 
                 <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">
@@ -69,10 +69,10 @@ function SkillsList({ dataLink }) {
 
                                     <NavLink to={`skills/${skillDetails.id}`}>
                                         <div className="card-img-container">
-                                            <img 
-                                            src={skillDetails.imageURL} 
-                                            className="card-img" 
-                                            alt="skill image" />
+                                            <img
+                                                src={skillDetails.imageURL}
+                                                className="card-img"
+                                                alt="skill image" />
                                         </div>
                                         <h3 className="card-title">{skillDetails.name}</h3>
                                     </NavLink>

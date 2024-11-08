@@ -261,6 +261,11 @@ h3 {
   text-align: justify;
 }
 
+.about-team {
+  color: #ED5A00;
+  text-shadow: .5px .5px black;
+}
+
 
 
 /*SKILLS LIST*/

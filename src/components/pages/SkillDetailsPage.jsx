@@ -50,10 +50,10 @@ function SkillDetailsPage({ dataLink, basePath }) {
                     </div>
 
                     <div className="skill-info-container">
-                        <h5>Target Audience: </h5> 
+                        <h5>Target Audience: </h5>
                         <p className="skill-info">{skill.targetAudience}</p>
 
-                        <h5>Description:</h5> 
+                        <h5>Description:</h5>
                         <p className="skill-info">{skill.description}</p>
 
                         {skill.resources && (
@@ -62,7 +62,7 @@ function SkillDetailsPage({ dataLink, basePath }) {
                                 <ul className="skill-info">
                                     {skill.resources.map((resource, index) => (
                                         <li key={index}>
-                                            <strong>{resource.type}: </strong> 
+                                            <strong>{resource.type}: </strong>
                                             <a href={resource.url} target="_blank" rel="noopener noreferrer">{resource.name}</a>
                                         </li>
                                     ))}
@@ -71,8 +71,8 @@ function SkillDetailsPage({ dataLink, basePath }) {
                         )}
                         <div className="d-flex justify-content-center">
                             <Link to={`${basePath}/skills/${skillId}/edit`}>
-                            <div className="edit-btn-container">
-                                <button className="edit-btn btn btn-dark btn-lg m-2">Edit</button>
+                                <div className="edit-btn-container">
+                                    <button className="edit-btn btn btn-dark btn-lg m-2">Edit</button>
                                 </div>
                             </Link>
                         </div>

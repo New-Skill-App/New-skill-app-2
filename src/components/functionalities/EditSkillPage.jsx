@@ -144,11 +144,11 @@ function EditSkillPage({ dataLink }) {
                                 </div>
                             ))}
                             <div className="add-btn-container">
-                            <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
-                                Add Resource
-                            </button>
+                                <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
+                                    Add Resource
+                                </button>
                             </div>
-                            
+
                         </div>
                     </form>
                 </div>
