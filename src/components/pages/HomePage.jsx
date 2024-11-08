@@ -42,7 +42,6 @@ function HomePage() {
                     </div>
                 </NavLink>
 
-
                 <NavLink to="/music-page">
                     <div
                         className="card card-3">
@@ -50,21 +49,6 @@ function HomePage() {
                     </div>
                 </NavLink>
 
-                {/* <div
-                    className="card card-2">
-                    <h2>Data Analyzation</h2>
-                </div>
-
-                <div
-                    className="card card-1">
-                    <h2>Coding</h2>
-                </div>
-
-
-                <div
-                    className="card card-3">
-                    <h2>Languages</h2>
-                </div> */}
 
             </div >
         </div >

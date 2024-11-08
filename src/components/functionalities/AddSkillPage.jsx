@@ -15,10 +15,10 @@ function AddSkillPage({ dataLink }) {
 
     const [selectedCategory, setSelectedCategory] = useState("Visual Arts")
 
-    
+
     const handleCategoryChange = (e) => {
         setSelectedCategory(e.target.value);
-      };
+    };
 
     const handleResourceChange = (index, field, value) => {
         const newResources = [...resources];
@@ -33,33 +33,33 @@ function AddSkillPage({ dataLink }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const newSkill = { name, description, targetAudience, imageURL, resources };
-      
+
         let apiEndpoint;
         switch (selectedCategory) {
-          case "Visual Arts":
-            apiEndpoint = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
-            break;
-          case "Sports":
-            apiEndpoint = "https://skills-sports-default-rtdb.europe-west1.firebasedatabase.app/skills";
-            break;
-          case "Music":
-            apiEndpoint = "https://skills-music-default-rtdb.europe-west1.firebasedatabase.app/skills";
-            break;
-          default:
-            console.error("Unknown category");
-            return;
+            case "Visual Arts":
+                apiEndpoint = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
+                break;
+            case "Sports":
+                apiEndpoint = "https://skills-sports-default-rtdb.europe-west1.firebasedatabase.app/skills";
+                break;
+            case "Music":
+                apiEndpoint = "https://skills-music-default-rtdb.europe-west1.firebasedatabase.app/skills";
+                break;
+            default:
+                console.error("Unknown category");
+                return;
         }
-      
+
         axios.post(`${apiEndpoint}.json`, newSkill)
-          .then(response => {
-            console.log(response);
-            // Redirect based on category or to a specific page
-            navigate(`/${selectedCategory.replace(" ", "-").toLowerCase()}-page`);
-          })
-          .catch(e => console.log("Error creating a new skill...", e));
-      };
+            .then(response => {
+                console.log(response);
+                // Redirect based on category 
+                navigate(`/${selectedCategory.replace(" ", "-").toLowerCase()}-page`);
+            })
+            .catch(e => console.log("Error creating a new skill...", e));
+    };
 
     return (
         <div className="Main skill-details-container">
