@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/bars/Header";
 import SideBar from "./components/bars/SideBar";
 import Footer from "./components/bars/Footer";
 
