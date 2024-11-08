@@ -7,7 +7,7 @@ import HomePage from "./components/pages/HomePage";
 import AboutPage from "./components/pages/AboutPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import SkillDetailsPage from "./components/pages/SkillDetailsPage";
-import CreateSkill from "./components/functionalities/CreateSkill";
+import AddSkillPage from "./components/functionalities/AddSkillPage";
 import SkillsList from "./components/pages/SkillsList";
 import EditSkillPage from "./components/functionalities/EditSkillPage";
 
@@ -35,7 +35,7 @@ function App() {
             path="/visual-arts-page/skills/:skillId"
             element={<SkillDetailsPage dataLink={dataLinkVisualArts} basePath="/visual-arts-page" />}
           />
-          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkVisualArts} />} />
+          <Route path="/skills/add" element={<AddSkillPage dataLink={dataLinkVisualArts} />} />
           <Route path="/visual-arts-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkVisualArts} />} />
 
           {/* Sports Related Routes */}
@@ -44,7 +44,7 @@ function App() {
             path="/sports-page/skills/:skillId"
             element={<SkillDetailsPage dataLink={dataLinkSports} basePath="/sports-page" />}
           />
-          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkSports} />} />
+          <Route path="/skills/add" element={<AddSkillPage dataLink={dataLinkSports} />} />
           <Route path="/sports-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkSports} />} />
 
           {/* Music Related Routes */}
@@ -54,7 +54,7 @@ function App() {
             element={<SkillDetailsPage dataLink={dataLinkMusic} basePath="/music-page" />}
           />
 
-          <Route path="/skills/create" element={<CreateSkill dataLink={dataLinkMusic} />} />
+          <Route path="/skills/add" element={<AddSkillPage dataLink={dataLinkMusic} />} />
           <Route path="/music-page/skills/:skillId/edit" element={<EditSkillPage dataLink={dataLinkMusic} />} />
 
         </Routes>

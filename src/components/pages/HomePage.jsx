@@ -21,7 +21,7 @@ function HomePage() {
                     </div>
 
                     <div className="slogan d-flex justify-content-center align-items-center">
-                        <h3 className="text-center">The app that connects you to top schools, courses, and resources for learning and growth</h3>
+                        <h3 className="text-center">Here you can connect to top schools, courses, and resources for learning and growth</h3>
                     </div>
                 </div>
             </div >

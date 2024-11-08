@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 
-function CreateSkill({ dataLink }) {
+function AddSkillPage({ dataLink }) {
 
     const navigate = useNavigate();
 
@@ -12,6 +12,13 @@ function CreateSkill({ dataLink }) {
     const [targetAudience, setTargetAudience] = useState("");
     const [imageURL, setImageURL] = useState("");
     const [resources, setResources] = useState([{ type: "", name: "", url: "" }]);
+
+    const [selectedCategory, setSelectedCategory] = useState("Visual Arts")
+
+    
+    const handleCategoryChange = (e) => {
+        setSelectedCategory(e.target.value);
+      };
 
     const handleResourceChange = (index, field, value) => {
         const newResources = [...resources];
@@ -26,22 +33,33 @@ function CreateSkill({ dataLink }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        const newSkill = {
-            name,
-            description,
-            targetAudience,
-            imageURL,
-            resources,
-        };
-
-        axios.post(`${dataLink}.json`, newSkill)
-            .then(response => {
-                console.log(response);
-                navigate(`/visual-arts-page`)
-            })
-            .catch(e => console.log("Error creating a new skill...", e));
-    };
+        
+        const newSkill = { name, description, targetAudience, imageURL, resources };
+      
+        let apiEndpoint;
+        switch (selectedCategory) {
+          case "Visual Arts":
+            apiEndpoint = "https://skills-visual-arts-default-rtdb.europe-west1.firebasedatabase.app/skills";
+            break;
+          case "Sports":
+            apiEndpoint = "https://skills-sports-default-rtdb.europe-west1.firebasedatabase.app/skills";
+            break;
+          case "Music":
+            apiEndpoint = "https://skills-music-default-rtdb.europe-west1.firebasedatabase.app/skills";
+            break;
+          default:
+            console.error("Unknown category");
+            return;
+        }
+      
+        axios.post(`${apiEndpoint}.json`, newSkill)
+          .then(response => {
+            console.log(response);
+            // Redirect based on category or to a specific page
+            navigate(`/${selectedCategory.replace(" ", "-").toLowerCase()}-page`);
+          })
+          .catch(e => console.log("Error creating a new skill...", e));
+      };
 
     return (
         <div className="skill-details-container">
@@ -56,10 +74,10 @@ function CreateSkill({ dataLink }) {
 
                         <div className="form-group mb-3">
                             <label for="categories">Choose a Category:  </label>
-                            <select id="categories" name="categories">
-                                <option value="apple">Visual Arts</option>
-                                <option value="banana">Sports</option>
-                                <option value="cherry">Music</option>
+                            <select id="categories" name="categories" onChange={handleCategoryChange}>
+                                <option value="Visual Arts">Visual Arts</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Music">Music</option>
                             </select>
                         </div>
 
@@ -159,4 +177,4 @@ function CreateSkill({ dataLink }) {
     );
 }
 
-export default CreateSkill;
+export default AddSkillPage;

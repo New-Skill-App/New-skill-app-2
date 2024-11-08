@@ -38,7 +38,7 @@ function SideBar() {
                 About Us</a>
             </NavLink>
 
-            <NavLink to="/skills/create">
+            <NavLink to="/skills/add">
               <a className="nav-link-custom nav-link py-3">
                 <i class="bi bi-file-earmark-plus"></i>
                 Add Skill</a>
@@ -63,7 +63,7 @@ function SideBar() {
                 Sports</a>
             </NavLink>
 
-            <NavLink to="*">
+            <NavLink to="/music-page">
               <a className="nav-link-custom nav-link py-3">
                 <i class="bi bi-music-note-beamed"></i>
                 Music</a>
