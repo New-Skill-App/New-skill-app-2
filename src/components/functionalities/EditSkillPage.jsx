@@ -65,7 +65,7 @@ function EditSkillPage({ dataLink }) {
     if (!skill) return <div className="skill-details-card"><h3 className="loading-message">Loading...</h3></div>;
 
     return (
-        <div className="skill-details-container">
+        <div className="Main skill-details-container">
 
             <div className="skill-details-card">
 

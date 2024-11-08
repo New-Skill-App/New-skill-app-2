@@ -14,7 +14,8 @@ function SideBar() {
   return (
     <>
       <>
-        <button className="burger-menu" onClick={toggleMenu}>Burguer
+        <button className="burger-menu" onClick={toggleMenu}>
+            <i class="bi bi-list"></i>
           <span className="burger-bar"></span>
           <span className="burger-bar"></span>
           <span className="burger-bar"></span>
@@ -44,8 +45,9 @@ function SideBar() {
                 Add Skill</a>
             </NavLink>
 
-          </div>
-          <div className="sidebar-categories d-flex flex-column">
+          <br />
+          <br />
+          
             <NavLink to="/">
               <a className="nav-link-custom nav-link py-3">
                 Categories</a>

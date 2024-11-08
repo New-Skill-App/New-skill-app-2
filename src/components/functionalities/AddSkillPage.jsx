@@ -62,7 +62,7 @@ function AddSkillPage({ dataLink }) {
       };
 
     return (
-        <div className="skill-details-container">
+        <div className="Main skill-details-container">
 
             <div className="add-skill-details-card">
 

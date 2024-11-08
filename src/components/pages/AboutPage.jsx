@@ -1,6 +1,6 @@
 function AboutPage() {
   return (
-    <div className="full-screen-container d-flex flex-column align-items-center 100vh">
+    <div className="Main full-screen-container d-flex flex-column align-items-center 100vh">
 
       <div className="about-container">
         <div className="about-text">

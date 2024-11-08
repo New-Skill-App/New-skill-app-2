@@ -30,8 +30,13 @@ h3 {
 
 .logo {
   display: flex;
-  width: 7vw;
+  width: 8vw;
   height: auto;
+}
+
+.Main {
+  width: 90%;
+  padding: 1vw 1vh;
 }
 
 
@@ -143,15 +148,18 @@ h3 {
 
 .sidebar {
   width: 10vw;
+  min-width: 120px;
+  height: 200vh;
   top: 0px;
   left: 0px;
   background: #223957;
-  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);  
 }
 
 .sidebar-container {
   width: 10vw;
-  top: 20px;
+  top:3vh;
   margin-left: 1px;
   display: flex;
   flex-direction: row;
@@ -160,13 +168,12 @@ h3 {
 }
 
 .sidebar-content {
-  padding-top: 100px;
+  padding-top: 10vh;
   margin-left: 1vw;
-  border-bottom: 1px solid white;
 }
 
 .sidebar-categories {
-  padding-top: 20px;
+  padding-top: 2vh;
   margin-left: 1vw;
 }
 
@@ -181,11 +188,12 @@ h3 {
 
 .nav-link-custom i {
   margin: 8px;
+  color: white;
 }
 
 
 /*HEADER*/
-
+/* 
 .header-container {
   width: 80%;
   position: absolute;
@@ -214,7 +222,7 @@ h3 {
 .search-bar input {
   padding: 10px;
   box-sizing: border-box;
-}
+} */
 
 /*FOOTER*/
 
@@ -352,7 +360,7 @@ h3 {
 }
 
 .skill-details-card {
-  width: 1000px;
+  width: 70vw;
   height: auto;
   margin: 10vh;
   background-color: #E2EBF5;
@@ -438,9 +446,9 @@ padding: 5px;
 /*ADD SKILL PAGE*/
 
 .add-skill-details-card {
-  width: 1000px;
+  width: 70vw;
   height: auto;
-  margin-top: 100px;
+  margin-top: 10vh;
   background-color: #E2EBF5;
   display: flex;
   flex-wrap: wrap;
@@ -477,26 +485,23 @@ padding: 5px;
 
 .burger-menu {
   display: none;
+  width: 0;
   /* Hidden by default on larger screens */
 }
 
-.sidebar {
-  width: 10vw;
-  top: 0;
-  left: 0;
-  background: #223957;
-  height: 100vh;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(0);
-  /* Ensure it is visible by default */
-}
+
 
 @media (max-width: 425px) {
+
+  .body {
+    font-size: medium;
+  }
+
   .burger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 24px;
+    height: 0px;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -504,12 +509,17 @@ padding: 5px;
   }
 
   .burger-bar {
-    width: 30px;
-    height: 3px;
+    width: 0vw;
+    height: 0vh;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 0vw;
     transition: all 0.3s linear;
   }
+
+  .bi-list {
+      font-size: 70px;
+  }
+  
 
   .sidebar {
     position: fixed;
@@ -521,39 +531,45 @@ padding: 5px;
     transform: translateX(0);
     /* Show sidebar when open */
   }
-}
 
-
-@media (max-width: 425px) {
-  body {
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
+  .Main {
+    width: 95%;
+    margin: 0;
+    padding: 15px;
+    font-size: 50px;
   }
 
   .project-title,
   .about-title {
-    font-size: 30px;
+    font-size: 100px;
   }
 
   .slogan h2 {
-    font-size: 20px;
+    font-size: 50px;
   }
 
   .card {
     width: 100%;
-    margin: 10px 0;
+    margin: 5px 0;
+    font-size: xx-large;
   }
 
   .card-container {
     flex-direction: column;
     width: 100%;
+    font-size: xx-large;
   }
 
+  .card-1 h2,
+  .card-2 h2,
+  .card-3 h2 {
+    font-size: 70px;
+}
 
+  .sidebar-container {
+    width: 40%;
+  }
 
-  .sidebar,
-  .sidebar-container,
   .full-screen-container,
   .skills-list-container,
   .skill-details-container {
@@ -561,25 +577,43 @@ padding: 5px;
     margin-left: 0;
   }
 
-  .sidebar-container,
-  .sidebar-content,
-  .sidebar-categories,
-  .header-container {
-    align-items: center;
-    text-align: center;
+
+  .sidebar{
+    width: 50vw;
+    z-index: 1;
+  }
+
+  .sidebar img {
+    display: none;
   }
 
   .sidebar-container {
-    margin-bottom: 20px;
-    width: 100%;
+    top: 40vh;
+    margin-bottom: 0px;
+    width: 0;
   }
+
+  .sidebar-content {
+    top: 40vh;
+  }
+
+  .sidebar-content,
+  .sidebar-categories {
+    align-items: left;
+    text-align: center;
+    font-size: xx-large;
+    top: 20vh;
+  }
+
+  /* .header-container 
+  
 
   .header-container {
     flex-direction: column;
     justify-content: center;
     padding: 10px 0;
     position: static;
-  }
+  } */
 
   .home-page-img {
     width: 80%;
@@ -624,5 +658,10 @@ padding: 5px;
   .con,
   .form-group.mb-3 textarea {
     width: 100%;
+  }
+
+  .footer-container,
+  .footer a {
+    display: none;
   }
 }

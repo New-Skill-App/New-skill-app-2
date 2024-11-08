@@ -39,7 +39,7 @@ function SkillDetailsPage({ dataLink, basePath }) {
 
     return (
         <>
-            <div className="skill-details-container">
+            <div className="Main skill-details-container">
 
                 <div className="skill-details-card">
 

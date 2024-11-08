@@ -20,7 +20,7 @@ function App() {
     <div className="d-flex">
       <SideBar />
       <div className="Main">
-        <Header id="header" />
+        {/* <Header id="header" /> */}
 
         <Routes>
           {/* General Routes */}

@@ -3,7 +3,7 @@ import logoHomePage from "/images/logoHomePage.png";
 
 function HomePage() {
     return (
-        <div className="full-screen-container d-flex flex-column align-items-center">
+        <div className="Main full-screen-container d-flex flex-column align-items-center">
 
             <div className=" d-flex flex-column align-items-center">
                 <div className="d-flex justify-content-center align-items-center">
@@ -27,7 +27,7 @@ function HomePage() {
             </div >
 
 
-            <div className="card-container">
+            <div className="Main card-container">
                 <NavLink to="/visual-arts-page">
                     <div
                         className=" card card-1">
