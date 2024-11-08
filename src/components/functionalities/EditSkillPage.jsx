@@ -122,13 +122,6 @@ function EditSkillPage({ dataLink }) {
                                 <div key={index} className="mb-3">
                                     <input
                                         type="text"
-                                        placeholder="Type"
-                                        value={resource.type}
-                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
-                                        className="form-control mb-1"
-                                    />
-                                    <input
-                                        type="text"
                                         placeholder="Name"
                                         value={resource.name}
                                         onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
@@ -139,6 +132,13 @@ function EditSkillPage({ dataLink }) {
                                         placeholder="URL"
                                         value={resource.url}
                                         onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                        className="form-control mb-1"
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Type"
+                                        value={resource.type}
+                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
                                         className="form-control mb-1"
                                     />
                                 </div>
