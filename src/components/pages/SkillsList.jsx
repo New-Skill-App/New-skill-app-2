@@ -48,7 +48,9 @@ function SkillsList({ dataLink }) {
             <div className="skills-list-container d-flex flex-column align-items-center 100vh ">
                 {skills === null
                     ? <h2 className="loading-message">Loading...</h2>
-                    : <h2 className="skills-title"> {skills.length} Skills To Explore</h2>}
+                    : <h2 className="skills-title"> 
+                    <h2 className="num-skills">{skills.length}</h2> 
+                    Skills To Explore</h2>}
 
 
                 <div className="d-flex flex-row flex-wrap justify-content-center align-items-center">

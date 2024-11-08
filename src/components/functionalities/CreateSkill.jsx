@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 function CreateSkill({ dataLink }) {
 
     const navigate = useNavigate();
-    
+
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [targetAudience, setTargetAudience] = useState("");
@@ -54,94 +54,96 @@ function CreateSkill({ dataLink }) {
                     </div>
                     <form onSubmit={handleSubmit}>
 
-                    <div className="form-group mb-3">
-                        <label for="categories">Choose a Category:  </label>
-                        <select id="categories" name="categories">
-                            <option value="apple">Visual Arts</option>
-                            <option value="banana">Sports</option>
-                            <option value="cherry">Music</option>
-                        </select>
-                    </div>
-
-                       
-                       <div className="form-group mb-3">
-                            <label>Name:</label>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Enter the name of the skill"
-                                required
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                className="form-control"
-                            />
-                        </div>
-
                         <div className="form-group mb-3">
-                            <label>Description:</label>
-                            <textarea
-                                name="description"
-                                placeholder="Enter the description"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                className="form-control"
-                            />
+                            <label for="categories">Choose a Category:  </label>
+                            <select id="categories" name="categories">
+                                <option value="apple">Visual Arts</option>
+                                <option value="banana">Sports</option>
+                                <option value="cherry">Music</option>
+                            </select>
                         </div>
 
-                        <div className="form-group mb-3">
-                            <label>Target Audience:</label>
-                            <textarea
-                                name="targetAudience"
-                                placeholder="Enter the target audience"
-                                value={targetAudience}
-                                onChange={(e) => setTargetAudience(e.target.value)}
-                                className="form-control"
-                            />
-                        </div>
+                        <div className="form-container">
+                            <div className="form-group mb-3">
+                                <label>Name:</label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Enter the name of the skill"
+                                    required
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    className="form-control"
+                                />
+                            </div>
 
-                        <div className="form-group mb-3">
-                            <label>Image URL:</label>
-                            <textarea
-                                name="imageURL"
-                                placeholder="Enter the URL to an image related to the new skill"
-                                value={imageURL}
-                                onChange={(e) => setImageURL(e.target.value)}
-                                className="form-control"
-                            />
-                        </div>
+                            <div className="form-group mb-3">
+                                <label>Description:</label>
+                                <textarea
+                                    name="description"
+                                    placeholder="Enter the description"
+                                    value={description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                    className="form-control"
+                                />
+                            </div>
 
-                        <div className="form-group">
-                            <label>Resources:</label>
-                            {resources.map((resource, index) => (
-                                <div key={index} className="mb-3">
-                                    <input
-                                        type="text"
-                                        placeholder="Name"
-                                        value={resource.name}
-                                        onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
-                                        className="form-control mb-1"
-                                        required
-                                    />
-                                    <input
-                                        type="url"
-                                        placeholder="URL"
-                                        value={resource.url}
-                                        onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
-                                        className="form-control mb-1"
-                                    />
-                                    <input
-                                        type="text"
-                                        placeholder="Type (School / Platform / Tutorial / etc.)"
-                                        value={resource.type}
-                                        onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
-                                        className="form-control mb-1"
-                                    />
-                                </div>
-                            ))}
+                            <div className="form-group mb-3">
+                                <label>Target Audience:</label>
+                                <textarea
+                                    name="targetAudience"
+                                    placeholder="Enter the target audience"
+                                    value={targetAudience}
+                                    onChange={(e) => setTargetAudience(e.target.value)}
+                                    className="form-control"
+                                />
+                            </div>
+
+                            <div className="form-group mb-3">
+                                <label>Image URL:</label>
+                                <textarea
+                                    name="imageURL"
+                                    placeholder="Enter the URL to an image related to the new skill"
+                                    value={imageURL}
+                                    onChange={(e) => setImageURL(e.target.value)}
+                                    className="form-control"
+                                />
+                            </div>
+
+                            <div className="form-group">
+                                <label>Resources:</label>
+                                {resources.map((resource, index) => (
+                                    <div key={index} className="mb-3">
+                                        <input
+                                            type="text"
+                                            placeholder="Name"
+                                            value={resource.name}
+                                            onChange={(e) => handleResourceChange(index, 'name', e.target.value)}
+                                            className="form-control mb-1"
+                                            required
+                                        />
+                                        <input
+                                            type="url"
+                                            placeholder="URL"
+                                            value={resource.url}
+                                            onChange={(e) => handleResourceChange(index, 'url', e.target.value)}
+                                            className="form-control mb-1"
+                                        />
+                                        <input
+                                            type="text"
+                                            placeholder="Type (School / Platform / Tutorial / etc.)"
+                                            value={resource.type}
+                                            onChange={(e) => handleResourceChange(index, 'type', e.target.value)}
+                                            className="form-control mb-1"
+                                        />
+                                    </div>
+
+                                ))}
+                            </div>
                             <div className="add-btn-container">
-                            <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
-                                Add Resource
-                            </button>
+                                <button type="button" onClick={addResource} className="add-btn btn btn-outline-secondary mt-2">
+                                    Add Resource
+                                </button>
                             </div>
                         </div>
 
